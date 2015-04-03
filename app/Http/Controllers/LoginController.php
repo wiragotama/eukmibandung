@@ -1,5 +1,9 @@
 <?php namespace App\Http\Controllers;
 
+use DB;
+use Input;
+use App\Quotation;
+
 class LoginController extends Controller {
 
 	/*
@@ -39,25 +43,26 @@ class LoginController extends Controller {
 	*/
 	public function validateLogin()
 	{
-	    $credentials = [];
-	    $credentials['username'] = Input::get('username');
-	    $credentials['password'] = Input::get('password');
-	    
-	    $remember = false;
-	    if ( Input::get($remember) )
-	    {
-	    	$remember = true;
-	    }
-	    
-	    $v = Validator::make($credentials, [
-    		'username' => 'required',
-    		'password' => 'required'
-    	]);
-    	
-    	if ( $v->fails() )
-    	{
-    		echo 'loginGagal';
-    		//return Redirect::action('AuthController@showLogin');
-    	}
-    }
+
+		$inputUsername = Input::get('username');
+		$inputPassword = Input::get('password');
+
+		echo (Input::get('username'));
+		echo (Input::get('password'));
+
+		$results = DB::select('select * from dinas where username="'.$inputUsername.'" and password="'.$inputPassword.'"');
+		if ($results!=NULL) 
+		{
+			//$this->middleware('auth');
+			return redirect('dinasDashboard');
+		}
+		else 
+		{
+			//tes apakah ada di tabel ukm/industri
+			//$results = DB::select('select * from dinas where username="'.$inputUsername.'" and password="'.$inputPassword.'"');
+			//klo ada masuk ke dashboard
+
+			return redirect('/login');
+		}
+	}
 }

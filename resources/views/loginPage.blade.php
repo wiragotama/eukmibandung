@@ -8,12 +8,13 @@
 	<link href="css/loginStyle.css" rel='stylesheet' type='text/css' />
 	<div class="container">
 		<div class="login-form">
-			<form id="loginForm" action="./login" method="POST">
+			<form id="loginForm" onsubmit="#" action="http://localhost:8000/login" method="POST">
+				<input name="_token" type="hidden" value="JpAsr71YFJQbd8iRBhQwhtCLv3mqN80HwXtVx1aO"> </input>
 				<li>
-					<input id="username" name="username" type="text" class="text" value="USERNAME" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'USERNAME';}" >
+					<input id="username" name="username" type="text" class="text" placeholder="USERNAME" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'USERNAME';}"> </input>
 				</li>
 				<li>
-					<input id="password" name="password" type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
+					<input id="password" name="password" type="password" placeholder="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}"> </input>
 				</li>
 				<div class="p-container">
 						<input type="submit" onclick="#" value="SIGN IN" >
@@ -22,5 +23,19 @@
 			</form>
 		</div>
 	</div>
+
+	<!--<script>
+		function validateForm() {
+			var usr = document.getElementById("username.value");
+			var pwd = document.getElementById("password.value");
+
+			if (usr==="" || pwd=="") {
+				alert('username and password must be filled!');
+				return false;
+			}
+
+			return true;
+		}
+	</script>-->
 
 @stop

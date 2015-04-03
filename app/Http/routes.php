@@ -18,6 +18,8 @@ Route::post('login', array('uses' => 'LoginController@validateLogin'));
 
 Route::get('verifikasiUKMIndag', 'VerifikasiUKMIndagController@index');
 
+Route::get('dashboardDinas', 'DashboardDinasController@index');
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
