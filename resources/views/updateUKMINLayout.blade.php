@@ -9,9 +9,9 @@
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="menu nav navbar-nav navbar-right">
-		        <li id="updateIndustriLink"> <a href="./updateIndustri">Industri</a></li>
-		        <li id="updateUKMLink"><a href="./updateUKM">UKM</a></li>
-		        <li id="updateVerifikasiLink"><a href="./updateVerifikasi">Verifikasi</a></li>
+		        <li id="updateIndustriLink"> <a href="./listIndustri">Industri</a></li>
+		        <li id="updateUKMLink"><a href="./listUKM">UKM</a></li>
+		        <li id="updateVerifikasiLink"><a href="./listVerifikasi">Verifikasi</a></li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->

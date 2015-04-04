@@ -31,7 +31,7 @@
 						  <img src="images/icon2.png" class="img-responsive"/>
 						  <p>Ubah data dari Industri atau UKM</p>
 					     <div class="rd_more1">
-							<a href="./updateIndustri"><button class="btn_style">UBAH</button></a>
+							<a href="./listIndustri"><button class="btn_style">UBAH</button></a>
 						</div>	
 					</div>
 				    <div class="clearfix"></div>

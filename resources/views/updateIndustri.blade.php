@@ -8,57 +8,64 @@
   		d.className = d.className + " active";
 	</script>
 	
-	<!--get id industri here-->
+	<!--get id UKM here-->
 
-	<!-- start main -->
 	<div class="container">
 		<div class="col-md-8">
 		  <div class="contact-form">
 		  	<h2>Update Industri</h2>
-			    <form id="loginForm" onsubmit="#" action="http://localhost:8000/createIndustri" method="POST">
+			    <?php
+			    	echo('<form id="loginForm" onsubmit="#" action="http://localhost:8000/updateIndustri?id='.$_GET['id'].'" method="POST">');
+			    ?>
 			    	<input type="hidden" name="_token" value="{{ csrf_token() }}">
-			    	<div>
-				     	<span>Nomor Registrasi</span>
-				    	<span><input name="noreg" type="text" class="form-control" id="noreg"></span>
-				    </div>
-			    	<div>
-				    	<span>username</span>
-				    	<span><input name="username" type="text" class="form-control" id="username"></span>
-				    </div>
-				    <div>
-				    	<span>password</span>
-				    	<span><input name="password" type="password" class="form-control" id="password"></span>
-				    </div>
-				    <div>
-				     	<span>Nama Perusahaan</span>
-				    	<span><input name="namaperusahaan" type="text" class="form-control" id="namaperusahaan"></span>
-				    </div>
-				    <div>
-				     	<span>Produk</span>
-				    	<span><input name="produk" type="text" class="form-control" id="produk"></span>
-				    </div>
-				    <div>
-				     	<span>Pemilik</span>
-				    	<span><input name="pemilik" type="text" class="form-control" id="pemilik"></span>
-				    </div>
-				    <div>
-				     	<span>Kontak</span>
-				    	<span><input name="kontak" type="text" class="form-control" id="kontak"></span>
-				    </div>
-				    <div>
-				    	<span>Alamat</span>
-				    	<span><textarea name="alamat" id="alamat"> </textarea></span>
-				    </div>
-				    <div>
-				    	<span>Deskripsi Perusahaan</span>
-				    	<span><textarea name="deskripsi" id="deskripsi"> </textarea></span>
-				    </div>
+			    		<?php
+			    		$result = DB::select('select * from industri where id_industri='.$_GET['id']);
+			    		foreach ($result as $row) {
+			    		  	# code... 
+					    	echo('<div>');
+						     	echo('<span>Nomor Registrasi</span>');
+						    	echo('<span><input name="noreg" type="text" class="form-control" id="noreg" value='.$row->no_registrasi.'> </span>');
+						    echo('</div>');
+					    	echo('<div>');
+						    	echo('<span>username</span>');
+						    	echo('<span><input name="username" type="text" class="form-control" id="username" value='.$row->username.'></span>');
+						    echo('</div>');
+						    echo('<div>');
+						    	echo('<span>password</span>');
+						    	echo('<span><input name="password" type="password" class="form-control" id="password" value='.$row->password.'></span>');
+						    echo('</div>');
+						    echo('<div>');
+						     	echo('<span>Nama Perusahaan</span>');
+						    	echo('<span><input name="namaperusahaan" type="text" class="form-control" id="namaperusahaan" value='.$row->nama_perusahaan.'></span>');
+						    echo('</div>');
+						    echo('<div>');
+						     	echo('<span>Produk</span>');
+						    	echo('<span><input name="produk" type="text" class="form-control" id="produk" value='.$row->produk.'></span>');
+						    echo('</div>');
+						    echo('<div>');
+						     	echo('<span>Pemilik</span>');
+						    	echo('<span><input name="pemilik" type="text" class="form-control" id="pemilik" value='.$row->pemilik.'></span>');
+						    echo('</div>');
+						    echo('<div>');
+						     	echo('<span>Kontak</span>');
+						    	echo('<span><input name="kontak" type="text" class="form-control" id="kontak" value='.$row->kontak.'></span>');
+						    echo('</div>');
+						    echo('<div>');
+						    	echo('<span>Alamat</span>');
+						    	echo('<span><textarea name="alamat" id="alamat">'.$row->alamat.' </textarea></span>');
+						    echo('</div>');
+						    echo('<div>');
+						    	echo('<span>Deskripsi Perusahaan</span>');
+						    	echo('<span><textarea name="deskripsi" id="deskripsi">'.$row->deskripsi.' </textarea></span>');
+						    echo('</div>');
 
-				   <div>
-				   		<span><input type="submit" value="Update"></span>
-				  </div>
-			    </form>
+						   echo('<div>');
+						   		echo('<span><input type="submit" value="Update"></span>');
+						   echo('</div>');
+						}
+			    echo('</form>');
+			  ?>
 		    </div>
 		</div>
-</div>
+	</div>
 @stop

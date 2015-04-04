@@ -103,42 +103,44 @@ class UpdateController extends Controller {
 		{
 			//fail message
 			$message = 'All forms must be filled! except password';
-			$back = 'createUKM';
+			$back = 'updateUKM?id='.$_GET['id'];
 			$redirect = '/dashboardMessages?message='.$message.'&'.'back='.$back;
 			return redirect($redirect);
 		}
 		else 
 		{
-			$message = 'Record Create Failed!';
-			$back = 'createUKM';
-			$insertFail = '/dashboardMessages?message='.$message.'&'.'back='.$back;
+			$message = 'Record Update Failed!';
+			$back = 'updateUKM?id='.$_GET['id'];
+			$updateFail = '/dashboardMessages?message='.$message.'&'.'back='.$back;
 
 			if ($password!="")
 			{
 				try {
-					$results = DB::insert('insert into ukm (username, password, no_registrasi, nama_perusahaan, produk
-						, pemilik, alamat, deskripsi, kontak) values (?, ?, ?, ?, ?, ?, ?, ?, ?)', array($username, $password, $noreg, $nama, 
-						$produk, $pemilik, $alamat, $deskripsi, $kontak));
+					//$query = 'update ukm set username="'.$username.'" where id_ukm='.$_GET['id'];
+					$query = "update ukm set username='".$username."', password='".$password."', no_registrasi='".$noreg."', nama_perusahaan='".$nama."', produk='".$produk."', pemilik='".$pemilik."', 
+					alamat='".$alamat."', deskripsi='".$deskripsi."', kontak='".$kontak."' where id_ukm=".$_GET['id'];
+					$results = DB::update($query);
 				}
 				catch (\Exception $e) 
 				{
-					return redirect ($insertFail);
+					return redirect ($updateFail);
 				}
 			}
 			else 
 			{
 				try {
-					$results = DB::insert('insert into ukm (username, no_registrasi, nama_perusahaan, produk
-						, pemilik, alamat, deskripsi, kontak) values (?, ?, ?, ?, ?, ?, ?, ?)', array($username, $noreg, $nama, 
-						$produk, $pemilik, $alamat, $deskripsi, $kontak));
+					$query = "update ukm set username='".$username."', no_registrasi='".$noreg."', nama_perusahaan='".$nama."', produk='".$produk."', pemilik='".$pemilik."', 
+					alamat='".$alamat."', deskripsi='".$deskripsi."', kontak='".$kontak."' where id_ukm=".$_GET['id'];
+					$results = DB::update($query);
 				}
 				catch (\Exception $e)
 				{
-					return redirect ($insertFail);
+					return redirect ($updateFail);
 				}
 			}
 
 			$message = 'Success';
+			$back='listUKM';
 			$redirect = '/dashboardMessages?message='.$message.'&'.'back='.$back;
 			return redirect($redirect);
 		}
@@ -182,49 +184,71 @@ class UpdateController extends Controller {
 		{
 			//fail message
 			$message = 'All forms must be filled! except password';
-			$back = 'createIndustri';
+			$back = 'updateIndustri?id='.$_GET['id'];
 			$redirect = '/dashboardMessages?message='.$message.'&'.'back='.$back;
 			return redirect($redirect);
 		}
 		else 
 		{
-			$message = 'Record Create Failed!';
-			$back = 'createIndustri';
-			$insertFail = '/dashboardMessages?message='.$message.'&'.'back='.$back;
+			$message = 'Record Update Failed!';
+			$back = 'updateIndustri?id='.$_GET['id'];
+			$updateFail = '/dashboardMessages?message='.$message.'&'.'back='.$back;
 
 			if ($password!="")
 			{
 				try {
-					$results = DB::insert('insert into industri (username, password, no_registrasi, nama_perusahaan, produk
-						, pemilik, alamat, deskripsi, kontak) values (?, ?, ?, ?, ?, ?, ?, ?, ?)', array($username, $password, $noreg, $nama, 
-						$produk, $pemilik, $alamat, $deskripsi, $kontak));
+					$query = "update industri set username='".$username."', password='".$password."', no_registrasi='".$noreg."', nama_perusahaan='".$nama."', produk='".$produk."', pemilik='".$pemilik."', 
+					alamat='".$alamat."', deskripsi='".$deskripsi."', kontak='".$kontak."' where id_industri=".$_GET['id'];
+					$results = DB::update($query);
 				}
 				catch (\Exception $e) 
 				{
-					return redirect ($insertFail);
+					return redirect ($updateFail);
 				}
 			}
 			else 
 			{
 				try {
-					$results = DB::insert('insert into industri (username, no_registrasi, nama_perusahaan, produk
-						, pemilik, alamat, deskripsi, kontak) values (?, ?, ?, ?, ?, ?, ?, ?)', array($username, $noreg, $nama, 
-						$produk, $pemilik, $alamat, $deskripsi, $kontak));
+					$query = "update industri set username='".$username."', no_registrasi='".$noreg."', nama_perusahaan='".$nama."', produk='".$produk."', pemilik='".$pemilik."', 
+					alamat='".$alamat."', deskripsi='".$deskripsi."', kontak='".$kontak."' where id_industri=".$_GET['id'];
+					$results = DB::update($query);
 				}
 				catch (\Exception $e)
 				{
-					return redirect ($insertFail);
+					return redirect ($updateFail);
 				}
 			}
 
 			$message = 'Success';
+			$back='listIndustri';
 			$redirect = '/dashboardMessages?message='.$message.'&'.'back='.$back;
 			return redirect($redirect);
 		}
-	} 
+	}
 
 	public function updateVerifikasi() 
 	{
+		$status = Input::get('status');
+
+		$message = 'Record Update Failed!';
+		$back = 'updateVerifikasi?id='.$_GET['id'];
+		$updateFail = '/dashboardMessages?message='.$message.'&'.'back='.$back;
+
+		
+		try {
+			$query = "update verifikasi set status='".$status."' where id_verifikasi=".$_GET['id'];
+			$results = DB::update($query);
+		}
+		catch (\Exception $e) 
+		{
+			return redirect ($updateFail);
+		}
+		
+
+		$message = 'Success';
+		$back='listVerifikasi';
+		$redirect = '/dashboardMessages?message='.$message.'&'.'back='.$back;
+		return redirect($redirect);
 
 	}
 }
