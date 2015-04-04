@@ -54,7 +54,7 @@ class LoginController extends Controller {
 		if ($results!=NULL) 
 		{
 			//$this->middleware('auth');
-			return redirect('dinasDashboard');
+			return redirect('dashboardDinas');
 		}
 		else 
 		{

@@ -9,7 +9,7 @@
 	<div class="container">
 		<div class="login-form">
 			<form id="loginForm" onsubmit="#" action="http://localhost:8000/login" method="POST">
-				<input name="_token" type="hidden" value="JpAsr71YFJQbd8iRBhQwhtCLv3mqN80HwXtVx1aO"> </input>
+				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				<li>
 					<input id="username" name="username" type="text" class="text" placeholder="USERNAME" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'USERNAME';}"> </input>
 				</li>

@@ -42,7 +42,7 @@
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      <ul class="menu nav navbar-nav navbar-right">
 			        <li id="dashboardLink"><a href="./dashboardDinas">Dashboard</a></li>
-			        <li id="CRUDLink"> <a href="#">CRUD</a></li>
+			        <li id="CRUDLink"> <a href="./CRUD_Dinas">CRUD</a></li>
 			        <li id="ReportLink"> <a href="#">Report</a></li>
 			        <li id"LogoutLinl"> <a href="./login">Logout</a></li>
 			      </ul>
