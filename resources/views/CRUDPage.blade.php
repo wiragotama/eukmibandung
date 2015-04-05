@@ -23,7 +23,7 @@
 						  <img src="images/icon3.png" class="img-responsive"/>
 						  <p>Hapus data Industri atau UKM dari sistem</p>
 					      <div class="rd_more1">
-							<a href="#"><button class="btn_style">HAPUS</button></a>
+							<a href="./deleteUKM"><button class="btn_style">HAPUS</button></a>
 						</div>					
 					</div>
 					<div class="col-md-4 grid1_of_3">

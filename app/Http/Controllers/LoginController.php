@@ -3,6 +3,7 @@
 use DB;
 use Input;
 use App\Quotation;
+use Session;
 
 class LoginController extends Controller {
 
@@ -54,15 +55,42 @@ class LoginController extends Controller {
 		if ($results!=NULL) 
 		{
 			//$this->middleware('auth');
+			Session::put('username', $inputUsername);
+			Session::put('role', 'dinas');
 			return redirect('dashboardDinas');
 		}
 		else 
 		{
 			//tes apakah ada di tabel ukm/industri
-			//$results = DB::select('select * from dinas where username="'.$inputUsername.'" and password="'.$inputPassword.'"');
-			//klo ada masuk ke dashboard
-
+			$results = DB::select('select * from industri where username="'.$inputUsername.'" and password="'.$inputPassword.'"');
+			if ($results!=NULL)
+			{
+				foreach ($results as $row) {
+					Session::put('username', $inputUsername);
+					Session::put('id', $row->id_industri);
+					Session::put('role','industri');
+				}
+				return redirect('dashboardUKMIN');
+			}
+			else {
+				$results = DB::select('select * from ukm where username="'.$inputUsername.'" and password="'.$inputPassword.'"');
+				if ($results!=NULL)
+				{
+					foreach ($results as $row) {
+						Session::put('username', $inputUsername);
+						Session::put('id', $row->id_ukm);
+						Session::put('role','ukm');
+					}
+					return redirect('dashboardUKMIN');
+				}
+			}
 			return redirect('/login');
 		}
+	}
+
+	public function logout() 
+	{
+		Session::flush();
+		return redirect('/login');
 	}
 }

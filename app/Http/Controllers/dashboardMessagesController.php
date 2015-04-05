@@ -32,8 +32,13 @@ class DashboardMessagesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function dinas()
 	{
-		return view('dashboardMessages');
+		return view('dashboardDinasMessages');
+	}
+
+	public function ukmin()
+	{
+		return view('dashboardUKMINMessages');
 	}
 }
