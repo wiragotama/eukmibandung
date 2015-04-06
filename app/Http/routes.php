@@ -18,6 +18,9 @@ Route::post('login', array('uses' => 'LoginController@validateLogin'));
 Route::get('logout', 'LoginController@logout');
 
 Route::get('verifikasiUKMIndag', 'VerifikasiUKMIndagController@index');
+Route::post('verifikasiUKMIndag', 'VerifikasiUKMIndagController@validateNoReg');
+Route::get('dashboardGuestMessages', 'HomeController@message');
+
 Route::get('dashboardDinas', 'DashboardDinasController@index');
 Route::get('CRUD_Dinas', 'CRUDPageController@index');
 

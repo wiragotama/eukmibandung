@@ -11,9 +11,14 @@
 	<div class="container">
 		<h2>DAFTAR UKMI UNTUK DIVERIFIKASI</h2>
 		<div class="row footer">
-			<div class="col-md-3 span1_of_4"> <p><a href="CRUDPage.html"><h5>NO REG : 0001AXB</h5></a></p>
-										  <p><a href="CRUDPage.html"><h5>NO REG : 0002AXC</h5></a></p>
-										  <p><a href="CRUDPage.html"><h5>NO REG : 0090ZZZ</h5></a></p>
+			<div class="col-md-3 span1_of_4">
+			<?php
+				$results = DB::select('select * from verifikasi where status="not verified"');
+				foreach ($results as $row)
+				{
+					echo ('<p><a href="/updateVerifikasi?id='.$row->id_verifikasi.'"><h5>'.$row->no_registrasi.'</h5></a></p>');
+				}
+			?>
 			</div>
 		</div>
 	</div>
