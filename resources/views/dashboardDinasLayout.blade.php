@@ -44,7 +44,7 @@
 			        <li id="dashboardLink"><a href="./dashboardDinas">Dashboard</a></li>
 			        <li id="CRUDLink"> <a href="./CRUD_Dinas">CRUD</a></li>
 			        <li id="ReportLink"> <a href="#">Report</a></li>
-			        <li id"LogoutLinl"> <a href="./login">Logout</a></li>
+			        <li id"LogoutLink"> <a href="./logout">Logout</a></li>
 			      </ul>
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->
@@ -79,7 +79,7 @@
 					</div>
 				</div>
 				<div class="col-md-7 copy">
-					<p class="link text-right"><span>&#169; e-UKMI-Bandung | Design by&nbsp;<a href="http://w3layouts.com/"> PPL-K01-G01</a></span></p>
+					<p class="link text-right"><span>&#169; e-UKMI-Bandung | Dinas Perindustrian dan Perdagangan</span></p>
 				</div>
 			</div>
 		</div>

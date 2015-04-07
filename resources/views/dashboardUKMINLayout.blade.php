@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <html>
 
@@ -42,10 +41,9 @@
 			    <!-- Collect the nav links, forms, and other content for toggling -->
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      <ul class="menu nav navbar-nav navbar-right">
-			        <li id="homepageLink"> <a href="./">Home</a></li>
-			        <li id="verifikasiUKMIndagLink"> <a href="./verifikasiUKMIndag">Verifikasi</a></li>
-			        <li id="daftarUKMIndustriLink"> <a href="#">Daftar UKM/Industri</a></li>
-			        <li id="loginLink"> <a href="./login">Login</a></li>
+			        <li id="dashboardLink"><a href="./updateProfileUKMIN">Update Profile</a></li>
+			        <li id="ReportLink"> <a href="#">Profit Growth</a></li>
+			        <li id"LogoutLink"> <a href="./logout">Logout</a></li>
 			      </ul>
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->
@@ -80,7 +78,7 @@
 					</div>
 				</div>
 				<div class="col-md-7 copy">
-					<p class="link text-right"><span>&#169; e-UKMI-Bandung | Dinas Perindustrian dan Perdagangan </span></p>
+					<p class="link text-right"><span>&#169; e-UKMI-Bandung | Dinas Perindustrian dan Perdagangan</span></p>
 				</div>
 			</div>
 		</div>

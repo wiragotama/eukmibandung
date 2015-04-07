@@ -33,4 +33,9 @@ class HomeController extends Controller {
 		return view('homepage');
 	}
 
+	public function message()
+	{
+		return view('dashboardGuestMessages');
+	}
+
 }
