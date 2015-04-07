@@ -4,7 +4,7 @@ use DB;
 use Input;
 use App\Quotation;
 class GraphController extends Controller {
-
+	
 	/*
 	|--------------------------------------------------------------------------
 	| Graph Controller
@@ -33,9 +33,12 @@ class GraphController extends Controller {
 	 */
 	public function index()
 	{
-		return view('graph');
-	}
+		$pdf = App::make('dompdf'); //Note: in 0.6.x this will be 'dompdf.wrapper'
+		$pdf->loadHTML('<h1>Test</h1>');
+		return $pdf->stream();	}
 	public function create_graph(){
-		$inputID = Input::get('ID');
+		$pdf = App::make('dompdf'); //Note: in 0.6.x this will be 'dompdf.wrapper'
+		$pdf->loadHTML('<h1>Test</h1>');
+		return $pdf->stream();
 	}
 }
