@@ -67,13 +67,15 @@ class VerifikasiUKMIndagController extends Controller {
 				$results = DB::insert('insert into '.$jenis.' (username, password, no_registrasi, nama_perusahaan, produk
 						, pemilik, alamat, deskripsi, kontak) values (?, ?, ?, ?, ?, ?, ?, ?, ?)', array($username, $password, $no_registrasi, "NA", 
 						"NA", "NA", "NA", "NA", "NA"));
+
+				$results = DB::insert('insert into verifikasi (no_registrasi) values (?)', array($no_registrasi));
 				}
 				catch (\Exception $e) 
 				{
 					return redirect ($insertFail);
 				}
 
-				$message = "Verifikasi Success";
+				$message = "Verifikasi Success<br> </br> Silahkan menunggu perubahan status dari admin untuk dapat login";
 				$back = "/verifikasiUKMIndag";
 				$verifikasiSuccess = '/dashboardGuestMessages?message='.$message.'&'.'back='.$back;
 				return redirect($verifikasiSuccess);

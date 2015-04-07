@@ -66,22 +66,38 @@ class LoginController extends Controller {
 			if ($results!=NULL)
 			{
 				foreach ($results as $row) {
+					$no_registrasi = $row->no_registrasi;
+				}
+
+				$results = DB::select('select * from verifikasi where no_registrasi="'.$no_registrasi.'" and status="verified"');
+				if ($results!=NULL)
+				{
 					Session::put('username', $inputUsername);
 					Session::put('id', $row->id_industri);
 					Session::put('role','industri');
+					return redirect('dashboardUKMIN');
 				}
-				return redirect('dashboardUKMIN');
+				else
+					return redirect('/login');
 			}
 			else {
 				$results = DB::select('select * from ukm where username="'.$inputUsername.'" and password="'.$inputPassword.'"');
 				if ($results!=NULL)
 				{
 					foreach ($results as $row) {
+						$no_registrasi = $row->no_registrasi;
+					}
+
+					$results = DB::select('select * from verifikasi where no_registrasi="'.$no_registrasi.'" and status="verified"');
+					if ($results!=NULL)
+					{
 						Session::put('username', $inputUsername);
 						Session::put('id', $row->id_ukm);
 						Session::put('role','ukm');
+						return redirect('dashboardUKMIN');
 					}
-					return redirect('dashboardUKMIN');
+					else
+						return redirect('/login');
 				}
 			}
 			return redirect('/login');
