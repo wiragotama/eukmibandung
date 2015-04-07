@@ -14,6 +14,7 @@
 Route::get('/', 'HomeController@index');
 
 Route::get('login', 'LoginController@index');
+Route::get('graph','GraphController@index');
 Route::post('login', array('uses' => 'LoginController@validateLogin'));
 
 Route::get('verifikasiUKMIndag', 'VerifikasiUKMIndagController@index');
