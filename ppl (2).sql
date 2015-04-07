@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 07, 2015 at 04:06 PM
+-- Generation Time: Apr 07, 2015 at 04:17 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.4.16
 
@@ -86,6 +86,7 @@ CREATE TABLE IF NOT EXISTS `industri` (
   `deskripsi` text NOT NULL,
   `kontak` varchar(100) NOT NULL,
   `rating` int(11) NOT NULL DEFAULT '0',
+  `jumlah_pembeli_rating` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_industri`,`no_registrasi`),
   KEY `no_registrasi` (`no_registrasi`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
@@ -94,13 +95,13 @@ CREATE TABLE IF NOT EXISTS `industri` (
 -- Dumping data for table `industri`
 --
 
-INSERT INTO `industri` (`id_industri`, `username`, `password`, `no_registrasi`, `nama_perusahaan`, `produk`, `pemilik`, `alamat`, `deskripsi`, `kontak`, `rating`) VALUES
-(1, 'industri', 'industri', 'industri', 'industri', 'industri', 'industri', 'industri  ', 'industri  ', 'industri', 0),
-(2, 'dede', 'coba', 'dede', 'dede', 'coba', 'dede', ' coba  ', ' coba  ', 'coba', 0),
-(5, 'dede', 'dede', 'dede', 'linux', 'dede', 'dede', 'dede  ', 'dede  ', 'dede', 0),
-(6, '100', '100', '100', 'hehehe', 'hohoho', 'NA', 'NA ', 'NA ', 'NA', 0),
-(7, '100', '100', '100', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 0),
-(8, 'xx', 'xx', 'xx', 'xx', 'xx', 'xx', 'xx ', 'xx ', 'xx', 0);
+INSERT INTO `industri` (`id_industri`, `username`, `password`, `no_registrasi`, `nama_perusahaan`, `produk`, `pemilik`, `alamat`, `deskripsi`, `kontak`, `rating`, `jumlah_pembeli_rating`) VALUES
+(1, 'industri', 'industri', 'industri', 'industri', 'industri', 'industri', 'industri  ', 'industri  ', 'industri', 0, 0),
+(2, 'dede', 'coba', 'dede', 'dede', 'coba', 'dede', ' coba  ', ' coba  ', 'coba', 0, 0),
+(5, 'dede', 'dede', 'dede', 'linux', 'dede', 'dede', 'dede  ', 'dede  ', 'dede', 0, 0),
+(6, '100', '100', '100', 'hehehe', 'hohoho', 'NA', 'NA ', 'NA ', 'NA', 0, 0),
+(7, '100', '100', '100', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 0, 0),
+(8, 'xx', 'xx', 'xx', 'xx', 'xx', 'xx', 'xx ', 'xx ', 'xx', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -161,6 +162,7 @@ CREATE TABLE IF NOT EXISTS `ukm` (
   `deskripsi` text NOT NULL,
   `kontak` varchar(100) NOT NULL,
   `rating` int(11) NOT NULL DEFAULT '0',
+  `jumlah_pembeli_rating` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_ukm`,`no_registrasi`),
   KEY `no_registrasi` (`no_registrasi`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
@@ -169,14 +171,14 @@ CREATE TABLE IF NOT EXISTS `ukm` (
 -- Dumping data for table `ukm`
 --
 
-INSERT INTO `ukm` (`id_ukm`, `username`, `password`, `no_registrasi`, `nama_perusahaan`, `produk`, `pemilik`, `alamat`, `deskripsi`, `kontak`, `rating`) VALUES
-(6, 'wira', '123456789', 'ulululululu', 'balada cinta', 'asdasdasdasd', 'wira', 'asd     ', 'asd     ', 'asd', 0),
-(7, 'ukm', 'ukm', 'wira', 'cin(t)a segitiga + wasit', 'huhu', 'hehe', 'hyhy   ', 'balada cinta', 'hoho', 0),
-(8, 'coba', 'coba', 'coba', 'darwin', 'coba', 'darwin', ' coba ', ' coba ', 'coba', 0),
-(10, 'dede', 'dede', 'dede', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 0),
-(11, 'dede', 'dede', 'dede', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 0),
-(12, '153', '153', 'A153', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 0),
-(13, 'dummyUKM', 'dummy', 'dummyUKM', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 0);
+INSERT INTO `ukm` (`id_ukm`, `username`, `password`, `no_registrasi`, `nama_perusahaan`, `produk`, `pemilik`, `alamat`, `deskripsi`, `kontak`, `rating`, `jumlah_pembeli_rating`) VALUES
+(6, 'wira', '123456789', 'ulululululu', 'balada cinta', 'asdasdasdasd', 'wira', 'asd     ', 'asd     ', 'asd', 0, 0),
+(7, 'ukm', 'ukm', 'wira', 'cin(t)a segitiga + wasit', 'huhu', 'hehe', 'hyhy   ', 'balada cinta', 'hoho', 0, 0),
+(8, 'coba', 'coba', 'coba', 'darwin', 'coba', 'darwin', ' coba ', ' coba ', 'coba', 0, 0),
+(10, 'dede', 'dede', 'dede', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 0, 0),
+(11, 'dede', 'dede', 'dede', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 0, 0),
+(12, '153', '153', 'A153', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 0, 0),
+(13, 'dummyUKM', 'dummy', 'dummyUKM', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 0, 0);
 
 -- --------------------------------------------------------
 
