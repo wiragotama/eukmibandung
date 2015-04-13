@@ -14,7 +14,7 @@
 Route::get('/', 'HomeController@index');
 
 Route::get('login', 'LoginController@index');
-Route::get('/pdf', 'PrintController@index');
+Route::get('graph', 'GraphController@index');
 Route::post('login', array('uses' => 'LoginController@validateLogin'));
 Route::get('logout', 'LoginController@logout');
 

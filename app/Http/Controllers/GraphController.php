@@ -33,12 +33,6 @@ class GraphController extends Controller {
 	 */
 	public function index()
 	{
-		$pdf = App::make('dompdf'); //Note: in 0.6.x this will be 'dompdf.wrapper'
-		$pdf->loadHTML('<h1>Test</h1>');
-		return $pdf->stream();	}
-	public function create_graph(){
-		$pdf = App::make('dompdf'); //Note: in 0.6.x this will be 'dompdf.wrapper'
-		$pdf->loadHTML('<h1>Test</h1>');
-		return $pdf->stream();
+		return view('graph');
 	}
 }
