@@ -195,7 +195,7 @@ return [
 		'Form'		=> 'Illuminate\Html\FormFacade',
 		'Html' 		=> 'Illuminate\Html\HtmlFacade',
 		'View'      => 'Illuminate\Support\Facades\View',
-		'PDF'             => 'Barryvdh\DomPDF\Facade',
+		'PDF'       => 'Barryvdh\DomPDF\Facade',
 	],
 
 ];
