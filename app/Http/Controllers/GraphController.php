@@ -35,4 +35,11 @@ class GraphController extends Controller {
 	{
 		return view('graph');
 	}
+	public function create_graph(){
+        $parameterr = array();
+        $parameter['param'] = "Hello World!!";
+ 
+        $pdf = \PDF::loadView('graphTemplate', $parameter);
+        return $pdf->stream("Hello.pdf");
+	}
 }
