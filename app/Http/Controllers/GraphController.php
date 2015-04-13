@@ -39,7 +39,7 @@ class GraphController extends Controller {
         $parameterr = array();
         $parameter['param'] = "Hello World!!";
  
-        $pdf = \PDF::loadView('graphTemplate', $parameter);
-        return $pdf->stream("Hello.pdf");
+        $pdf = \PDF::loadView('graphTemplate', $parameter)->save(public_path()."Hello.pdf"); //save to file
+        return $pdf->stream("Hello.pdf"); //stream
 	}
 }
