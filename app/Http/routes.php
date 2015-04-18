@@ -23,6 +23,12 @@ Route::get('verifikasiUKMIndag', 'VerifikasiUKMIndagController@index');
 Route::post('verifikasiUKMIndag', 'VerifikasiUKMIndagController@validateNoReg');
 Route::get('dashboardGuestMessages', 'HomeController@message');
 
+Route::get('daftarUKMIndag', 'DaftarUKMIndagController@index');
+Route::get('daftarUKM', 'DaftarUKMIndagController@ratingUKM');
+Route::get('daftarIndustri', 'DaftarUKMIndagController@ratingIndustri');
+Route::post('ratingUKM', 'DaftarUKMIndagController@beriRatingUKM');
+Route::post('ratingIndustri', 'DaftarUKMIndagController@beriRatingIndustri');
+
 Route::get('dashboardDinas', 'DashboardDinasController@index');
 Route::get('CRUD_Dinas', 'CRUDPageController@index');
 
@@ -63,3 +69,5 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::get('/halo-juga', 'SiteController@haloJuga');
