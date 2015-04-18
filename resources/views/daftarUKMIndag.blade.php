@@ -46,8 +46,8 @@
 			            	<th>Nama Perusahaan</th>
 			            	<th>Deskripsi</th>
 			            	<th>Kontak</th>
-			            	<!-- <th class="row text-center">Delete</th>-->
-			          	</tr>
+			            	<th class="row text-center">More</th>
+			           	</tr>
 			        </thead>
 			        <tbody>
 			        	<?php
