@@ -12,6 +12,7 @@
 	<div class="container">
 			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 				<div id="stocks-div">
+				{{$pdf}}
 					<img src={{{ asset('images/graph/1.jpg') }}}>
 				</div>
 			</div> <!-- Carousel -->
