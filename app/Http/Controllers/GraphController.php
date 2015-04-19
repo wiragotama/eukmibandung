@@ -47,52 +47,68 @@ class GraphController extends Controller {
         // $pdf = \PDF::loadView('graphTemplate', $parameter)->save(public_path()."Hello.pdf"); //save to file
         // return $pdf->stream("Hello.pdf"); //stream
 		
-		/* Pembuatan Grafik */
-		$bulan = 4;
+		
+		/* Inisiasi Nilai */
+		$i;
+		$jumlah_data = 0;
+		$tahun = Input::get('tahun');
 		Session::put('nomor_registrasi', 123123);
 		$nomor_registrasi = Session::get('nomor_registrasi');
-		$profit = array();
-		$tanggal = array();
+		$profit = array(0,0,0,0,0,0,0,0,0,0,0,0);
 		$data = DB::table('profit')->orderBy('bulan','asc')->select('profit','bulan')->where('no_registrasi','=',$nomor_registrasi)->get();
 		$data = json_decode(json_encode($data),true);
-		foreach($data as $datum){
-			if(preg_match("/2015-0$bulan-/",$datum['bulan'])){
-			array_push($profit, $datum['profit']);
-			array_push($tanggal, substr($datum['bulan'],8,2));
+		
+		for($i =0;$i<count($data);$i++){
+			if(preg_match("/$tahun-0(.*)-/",$data[$i]['bulan'],$result)){
+				$profit[$result['1']-1] += $data[$i]['profit'];
+				$jumlah_data++;
 			}
 		}
-		//print_r($profit);
-		//print_r($tanggal);
-		$graph = new \Graph(800,800);
-		$graph->SetScale("textlin");
+		for($i =0;$i<count($profit);$i++){
+			if($profit[$i] == 0){
+				$profit[$i] = NULL;
+			}
+		}
+		
+		if($jumlah_data >0){
+			/* Pembuatan Grafik */
+			$graph = new \Graph(1000,800);
+			$graph->SetScale("textlin");
+			$theme_class=new \UniversalTheme;
+			$graph->SetTheme($theme_class);
+			$graph->img->SetAntiAliasing(false);
+			$graph->title->Set('Profit Tahun'.$tahun);
+			$graph->SetBox(false);
+			$graph->img->SetAntiAliasing();
 
-		$theme_class=new \UniversalTheme;
+			$graph->yaxis->HideZeroLabel();
+			$graph->yaxis->HideLine(false);
+			$graph->yaxis->HideTicks(false,false);
 
-		$graph->SetTheme($theme_class);
-		$graph->img->SetAntiAliasing(false);
-		$graph->title->Set('Profit Bulan '.$bulan);
-		$graph->SetBox(false);
+			$graph->xgrid->Show();
+			$graph->xgrid->SetLineStyle("solid");
+			$graph->xaxis->SetTickLabels(array("Januari", "Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"));
+			$graph->xgrid->SetColor('#E3E3E3');
 
-		$graph->img->SetAntiAliasing();
-
-		$graph->yaxis->HideZeroLabel();
-		$graph->yaxis->HideLine(false);
-		$graph->yaxis->HideTicks(false,false);
-
-		$graph->xgrid->Show();
-		$graph->xgrid->SetLineStyle("solid");
-		$graph->xaxis->SetTickLabels($tanggal);
-		$graph->xgrid->SetColor('#E3E3E3');
-
-		// Create the first line
-		$p1 = new \LinePlot($profit);
-		$graph->Add($p1);
-		$p1->SetColor("#6495ED");
-		$p1->SetLegend('Profit');
-		$graph->legend->SetFrameWeight(1);
-
-		//$graph->Stroke(public_path()."\images\graph\\"."b.jpg");
-		$graph->Stroke();
-		//return view('graph',compact('pdf'));
+			// Create the first line
+			$p1 = new \LinePlot($profit);
+			$graph->Add($p1);
+			$p1->SetColor("#6495ED");
+			$p1->SetLegend('Profit');
+			$graph->legend->SetFrameWeight(1);
+			
+			$nama = $nomor_registrasi."-".$tahun.".jpg";
+			$path = public_path()."\images\graph\\".$nama;
+			if(file_exists($path)){
+				unlink($path);
+			}
+			$graph->Stroke($path);
+			
+			Session::put('nama',$nama);
+			return view('profitGrowth');
+		}else{
+			Session::put('nama',"");
+			return view('profitGrowth');
+		}
 	}
 }

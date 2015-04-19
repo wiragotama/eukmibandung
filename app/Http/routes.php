@@ -14,8 +14,7 @@
 Route::get('/', 'HomeController@index');
 
 Route::get('login', 'LoginController@index');
-Route::get('graph', 'GraphController@index');
-Route::get('create_graph', 'GraphController@create_graph');
+
 Route::post('login', array('uses' => 'LoginController@validateLogin'));
 Route::get('logout', 'LoginController@logout');
 
@@ -59,9 +58,14 @@ Route::post('updateIndustriUKMIN', 'UpdateProfileController@updateIndustri');
 
 Route::get('dashboardMessages', 'dashboardMessagesController@dinas');
 Route::get('dashboardUKMINMessages', 'dashboardMessagesController@ukmin');
+
+Route::get('graph', 'GraphController@index');
+Route::get('create_graph', 'GraphController@create_graph');
 Route::get('profitGrowth',function(){
 	return View::make('profitGrowth');
 });
+Route::post('profitGrowth','GraphController@create_graph');
+
 Route::get('dashboardUKMIN', function()
 {
 	return View::make('dashboardUKMIN');
