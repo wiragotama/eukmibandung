@@ -72,7 +72,11 @@ class VerifikasiUKMIndagController extends Controller {
 				}
 				catch (\Exception $e) 
 				{
-					return redirect ($insertFail);
+
+					$message = "Verifikasi Success<br> </br> Verifikasi Anda sudah masuk, silahkan coba login atau tunggu perubahan status dari admin";
+					$back = "/verifikasiUKMIndag";
+					$verifikasiSuccess = '/dashboardGuestMessages?message='.$message.'&'.'back='.$back;
+					return redirect($verifikasiSuccess);
 				}
 
 				$message = "Verifikasi Success<br> </br> Silahkan menunggu perubahan status dari admin untuk dapat login";
@@ -87,7 +91,30 @@ class VerifikasiUKMIndagController extends Controller {
 		}
 		else 
 		{
-			return redirect ($insertFail);
+			$results = DB::select('select * from verifikasi where no_registrasi="'.$no_registrasi.'"');
+			if ($results!=NULL) 
+			{
+				$status;
+				$message;
+				foreach ($results as $row) 
+				{
+					$status=$row->status;
+				}
+				if ($status=='not verified') {
+					$message = "Verifikasi Success<br> </br> Silahkan menunggu perubahan status dari admin untuk dapat login";
+				}
+				else if ($status=='verified') {
+					$message = "Verifikasi Success<br> </br> Anda sudah terverifikasi";
+				}
+				else {
+					$message = "Verifikasi Success<br> </br> Masa ijin usaha Anda sudah habis";
+				}
+				$back = "/verifikasiUKMIndag";
+				$verifikasiSuccess = '/dashboardGuestMessages?message='.$message.'&'.'back='.$back;
+				return redirect($verifikasiSuccess);
+			}
+			else
+				return redirect ($insertFail);
 		}
 	}
 
