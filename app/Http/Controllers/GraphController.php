@@ -3,6 +3,7 @@
 use DB;
 use Input;
 use App\Quotation;
+use Session;
 
 /* Include kelas untuk graph */
 require_once(public_path()."/jpgraph/src/jpgraph.php");
@@ -48,7 +49,8 @@ class GraphController extends Controller {
 		
 		/* Pembuatan Grafik */
 		$bulan = 4;
-		$nomor_registrasi = 123123;
+		Session::put('nomor_registrasi', 123123);
+		$nomor_registrasi = Session::get('nomor_registrasi');
 		$profit = array();
 		$tanggal = array();
 		$data = DB::table('profit')->orderBy('bulan','asc')->select('profit','bulan')->where('no_registrasi','=',$nomor_registrasi)->get();
@@ -56,7 +58,7 @@ class GraphController extends Controller {
 		foreach($data as $datum){
 			if(preg_match("/2015-0$bulan-/",$datum['bulan'])){
 			array_push($profit, $datum['profit']);
-			array_push($tanggal, $datum['bulan']);
+			array_push($tanggal, substr($datum['bulan'],8,2));
 			}
 		}
 		//print_r($profit);
