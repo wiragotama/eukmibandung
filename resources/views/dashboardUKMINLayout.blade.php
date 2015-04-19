@@ -42,7 +42,7 @@
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      <ul class="menu nav navbar-nav navbar-right">
 			        <li id="dashboardLink"><a href="./updateProfileUKMIN">Update Profile</a></li>
-			        <li id="ReportLink"> <a href="#">Profit Growth</a></li>
+			        <li id="ReportLink"> <a href="./profitGrowth">Profit Growth</a></li>
 			        <li id"LogoutLink"> <a href="./logout">Logout</a></li>
 			      </ul>
 			    </div><!-- /.navbar-collapse -->
