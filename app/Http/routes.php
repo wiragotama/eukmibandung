@@ -63,3 +63,6 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::get('search','SearchController@index');
+Route::post('search','SearchController@searchUKMAndIndustri');

@@ -585,16 +585,16 @@
         },
         {
             "name": "khill/lavacharts",
-            "version": "2.4.0",
+            "version": "2.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kevinkhill/lavacharts.git",
-                "reference": "2151037c80a40ac8d50da71a875b2af627e86df7"
+                "reference": "04fda52a0b79e122919cf66ec4fd9937068be995"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kevinkhill/lavacharts/zipball/2151037c80a40ac8d50da71a875b2af627e86df7",
-                "reference": "2151037c80a40ac8d50da71a875b2af627e86df7",
+                "url": "https://api.github.com/repos/kevinkhill/lavacharts/zipball/04fda52a0b79e122919cf66ec4fd9937068be995",
+                "reference": "04fda52a0b79e122919cf66ec4fd9937068be995",
                 "shasum": ""
             },
             "require": {
@@ -633,7 +633,7 @@
                 "google",
                 "graphs"
             ],
-            "time": "2015-04-04 06:01:27"
+            "time": "2015-04-14 01:54:27"
         },
         {
             "name": "laravel/framework",
