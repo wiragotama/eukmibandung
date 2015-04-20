@@ -72,7 +72,7 @@ class GraphController extends Controller {
 		
 		if($jumlah_data >0){
 			/* Pembuatan Grafik */
-			$graph = new \Graph(1000,800);
+			$graph = new \Graph(850,400);
 			$graph->SetScale("textlin");
 			$theme_class=new \UniversalTheme;
 			$graph->SetTheme($theme_class);

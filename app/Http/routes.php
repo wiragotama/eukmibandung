@@ -60,11 +60,14 @@ Route::get('dashboardMessages', 'dashboardMessagesController@dinas');
 Route::get('dashboardUKMINMessages', 'dashboardMessagesController@ukmin');
 
 Route::get('graph', 'GraphController@index');
-Route::get('create_graph', 'GraphController@create_graph');
+Route::post('create_graph', 'GraphController@create_graph');
+Route::get('create_graph',function(){
+	return View::make('profitGrowth');
+});
 Route::get('profitGrowth',function(){
 	return View::make('profitGrowth');
 });
-Route::post('profitGrowth','GraphController@create_graph');
+Route::post('profitGrowth','GraphController@add_profit');
 
 Route::get('dashboardUKMIN', function()
 {
