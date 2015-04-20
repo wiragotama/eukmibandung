@@ -40,6 +40,20 @@ class GraphController extends Controller {
 	{
 		return view('graph');
 	}
+	public function add_profit(){
+		$profit = Input::get('profit');
+		$no_registrasi = Session::get('no_registrasi');
+		$bulan = date("Y-m-d");
+		$query = DB::table('profit')->insertGetId(array('no_registrasi'=>$no_registrasi,'profit'=> $profit, 'bulan' =>$bulan));
+		if($query != NULL){
+			$notifikasi = "Input profit berhasil";
+			
+		}else{
+			$notifikasi = "Input profit gagal";
+		}
+		Session::put('notifikasi',$notifikasi);
+		return redirect('/profitGrowth');
+	}
 	public function create_graph(){
         // $parameterr = array();
         // $parameter['param'] = "Hello World!!";

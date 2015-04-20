@@ -6,7 +6,7 @@
 	</script>
 
 	<div class="container">
-		<div class="col-md-3" style="border-style:solid;float:left">
+		<div class="col-md-3" style="float:left">
 		  <div class="contact-form">
 			<h3>Pilih Tahun</h3>
 				<?php
@@ -15,15 +15,19 @@
 						echo Form::submit('Generate Grafik');
 					echo Form::close();
 				?>
-				
 				<hr/>
 				<h3> Input Profit Bulanan </h3>
 				<?php
 					echo Form::open(array('url' => '/profitGrowth'));
-						echo Form::selectRange('tahun', date("Y"),date("Y"));
-						echo Form::selectRange('bulan', date("m"),date("m"));
+						echo Form::label(date("Y-m-d"));
+						echo Form::text('profit', '100000',array('style' => 'width: 100px;margin-left:5px;'));
 						echo Form::submit('Input Profit');
 					echo Form::close();
+				?>
+				<?php
+					if(!empty(Session::get('notifikasi'))){
+						echo Session::pull('notifikasi');
+					}
 				?>
 				</div>
 		</div>

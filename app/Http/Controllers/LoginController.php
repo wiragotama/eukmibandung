@@ -75,6 +75,7 @@ class LoginController extends Controller {
 					Session::put('username', $inputUsername);
 					Session::put('id', $row->id_industri);
 					Session::put('role','industri');
+					Session::put('no_registrasi',$no_registrasi);
 					return redirect('dashboardUKMIN');
 				}
 				else
@@ -94,6 +95,7 @@ class LoginController extends Controller {
 						Session::put('username', $inputUsername);
 						Session::put('id', $row->id_ukm);
 						Session::put('role','ukm');
+						Session::put('no_registrasi',$no_registrasi);
 						return redirect('dashboardUKMIN');
 					}
 					else
