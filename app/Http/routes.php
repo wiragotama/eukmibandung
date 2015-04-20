@@ -14,14 +14,19 @@
 Route::get('/', 'HomeController@index');
 
 Route::get('login', 'LoginController@index');
-Route::get('graph', 'GraphController@index');
-Route::get('create_graph', 'GraphController@create_graph');
+
 Route::post('login', array('uses' => 'LoginController@validateLogin'));
 Route::get('logout', 'LoginController@logout');
 
 Route::get('verifikasiUKMIndag', 'VerifikasiUKMIndagController@index');
 Route::post('verifikasiUKMIndag', 'VerifikasiUKMIndagController@validateNoReg');
 Route::get('dashboardGuestMessages', 'HomeController@message');
+
+Route::get('daftarUKMIndag', 'DaftarUKMIndagController@index');
+Route::get('daftarUKM', 'DaftarUKMIndagController@ratingUKM');
+Route::get('daftarIndustri', 'DaftarUKMIndagController@ratingIndustri');
+Route::post('ratingUKM', 'DaftarUKMIndagController@beriRatingUKM');
+Route::post('ratingIndustri', 'DaftarUKMIndagController@beriRatingIndustri');
 
 Route::get('dashboardDinas', 'DashboardDinasController@index');
 Route::get('CRUD_Dinas', 'CRUDPageController@index');
@@ -54,6 +59,13 @@ Route::post('updateIndustriUKMIN', 'UpdateProfileController@updateIndustri');
 Route::get('dashboardMessages', 'dashboardMessagesController@dinas');
 Route::get('dashboardUKMINMessages', 'dashboardMessagesController@ukmin');
 
+Route::get('graph', 'GraphController@index');
+Route::get('create_graph', 'GraphController@create_graph');
+Route::get('profitGrowth',function(){
+	return View::make('profitGrowth');
+});
+Route::post('profitGrowth','GraphController@create_graph');
+
 Route::get('dashboardUKMIN', function()
 {
 	return View::make('dashboardUKMIN');
@@ -64,5 +76,4 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::get('search','SearchController@index');
 Route::post('search','SearchController@searchUKMAndIndustri');
