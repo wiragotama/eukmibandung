@@ -6,7 +6,25 @@
 	</script>
 	<!-- start main -->
 	<br> </br>
-	<div class="container">
+		<div class="container">
+			<div class="container">
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="menu nav navbar-nav navbar-right">
+						<li>
+							<form id="searchForm" onsubmit="#" action="http://localhost:8000/search" method="POST">
+								<input type="hidden" name="_token" value="{{ csrf_token() }}">
+									<input id="keyword" name="keyword" type="text" class="text" placeholder="KEYWORD" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'KEYWORD';}"> </input>
+						</li>
+						<li>
+							<div class="p-container">
+										<input type="submit" onclick="#" value="SEARCH">
+										<div class="clear"> </div>
+							</div>
+							</form>
+						</li>
+					</ul>
+				</div>
+			</div>
 		<div class="contact-form">
 		  		<h2>Daftar UKM</h2>
 			    <table class="table">

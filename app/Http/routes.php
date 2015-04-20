@@ -79,4 +79,4 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::get('/halo-juga', 'SiteController@haloJuga');
+Route::post('search','SearchController@searchUKMAndIndustri');
