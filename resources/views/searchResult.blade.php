@@ -46,7 +46,7 @@
 			        <tbody>
 			        	<?php
 			        		$keyword = Input::get('keyword');
-			        		$results = DB::select('select nama_perusahaan,produk,deskripsi,alamat,kontak,rating from ukm where produk or nama_perusahaan like "%'.$keyword.'%" order by rating desc');  		
+			        		$results = DB::select('select nama_perusahaan,produk,deskripsi,alamat,kontak,rating from ukm where produk like "%'.$keyword.'%" or nama_perusahaan like "%'.$keyword.'%" order by rating desc');  		
 			        		if($results!=NULL)
 		        			{
 			        			foreach($results as $row)
@@ -79,7 +79,7 @@
 			        <tbody>
 			        	<?php
 			        		$keyword = Input::get('keyword');
-			        		$results = DB::select('select nama_perusahaan,produk,deskripsi,alamat,kontak,rating from industri where produk or nama_perusahaan like "%'.$keyword.'%" order by rating desc');  		
+			        		$results = DB::select('select nama_perusahaan,produk,deskripsi,alamat,kontak,rating from industri where produk like "%'.$keyword.'%" or nama_perusahaan like "%'.$keyword.'%" order by rating desc');  		
 			        		if($results!=NULL)
 		        			{
 			        			foreach($results as $row)
