@@ -17,11 +17,12 @@
 			  </ol>
 			 
 			  <!-- Wrapper for slides -->
+			  <div class="jumbotron"><b><center> <h1>e-UKMI BANDUNG</h1> </center></b></div>
 			  <div class="carousel-inner">
 			    <div class="item active">
-			      <img src="images/ukm.jpg" alt="...">
+			      <img src="images/ukm.jpg" alt="..." style=" width:110%" >
 			      <div class="carousel-caption" style="color:#CCFFFF">
-			          <b> <h1>e-UKMI-Bandung</h1> </b>
+			          
 			      </div>
 			    </div>
 			  </div>

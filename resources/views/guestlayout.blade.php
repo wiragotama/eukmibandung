@@ -17,6 +17,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 	<!-- // webfonts  -->
 	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
 	<!-- start plugins -->
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
@@ -38,9 +39,11 @@
 			        <span class="icon-bar"></span>
 			      </button>
 			      <a class="navbar-brand" href="index.html"><img src="images/pemkot.png" alt="" class="img-responsive" style="width:80px;"/> </a>
-			    </div>
+				</div>
+				
 			    <!-- Collect the nav links, forms, and other content for toggling -->
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					e-UKMI BANDUNG
 			      <ul class="menu nav navbar-nav navbar-right">
 			        <li id="homepageLink"> <a href="./">Home</a></li>
 			        <li id="verifikasiUKMIndagLink"> <a href="./verifikasiUKMIndag">Verifikasi</a></li>
