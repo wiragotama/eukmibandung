@@ -27,7 +27,7 @@
 						}
 						echo '</select>';
 						echo Form::selectRange('tahun', 2014, 2016);
-						echo Form::submit('Lihat Perkembangan');
+						echo Form::submit('Lihat Grafik Perkembangan');
 					echo Form::close();
 				?>
 				<hr/>
@@ -38,6 +38,7 @@
 				if(Session::get('nama')){
 			?>
 					<img src="{{ asset('images/graph/'.Session::pull('nama'))}}">
+					
 			<?php
 				}
 			?>		
