@@ -68,7 +68,9 @@ Route::get('profitGrowth',function(){
 	return View::make('profitGrowth');
 });
 Route::post('profitGrowth','GraphController@add_profit');
-
+Route::get('dashboardReport',function(){
+	return View::make('dashboardReport');
+});
 Route::get('dashboardUKMIN', function()
 {
 	return View::make('dashboardUKMIN');
