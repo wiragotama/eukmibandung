@@ -14,9 +14,20 @@
 			<h3>Dashboard Perkembangan UKM Indag</h3>
 				<?php
 					echo Form::open(array('url' => '/create_graph'));
-						echo "Pilih UKM Indag ". 
+						$ukms = DB::table('ukm')->select('no_registrasi','nama_perusahaan')->get();
+						$ukms = json_decode(json_encode($ukms),true);
+						$industries = DB::table('industri')->select('no_registrasi','nama_perusahaan')->get();
+						$industries = json_decode(json_encode($industries),true);
+						echo '<select name="user">';
+						foreach($ukms as $ukm){
+							echo '<option value="'.$ukm['no_registrasi'].'">'.$ukm['nama_perusahaan'].'</option>';
+						}
+						foreach($industries as $industri){
+							echo '<option value="'.$industri['no_registrasi'].'">'.$industri['nama_perusahaan'].'</option>';
+						}
+						echo '</select>';
 						echo Form::selectRange('tahun', 2014, 2016);
-						echo Form::submit('Generate Grafik');
+						echo Form::submit('Lihat Perkembangan');
 					echo Form::close();
 				?>
 				<hr/>
