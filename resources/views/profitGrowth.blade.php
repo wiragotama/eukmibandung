@@ -1,7 +1,7 @@
 @extends('dashboardUKMINLayout')
 @section('content')
 	<script>
-  		var d=document.getElementById("dashboardLink");
+  		var d=document.getElementById("ReportLink");
   		d.className = d.className + " active";
 	</script>
 
@@ -25,19 +25,20 @@
 					echo Form::close();
 				?>
 				<?php
-					if(!empty(Session::get('notifikasi'))){
+					if(Session::get('notifikasi')) {
 						echo Session::pull('notifikasi');
 					}
 				?>
-				</div>
 		</div>
+	</div>
 		<div class="col-md-6" style="margin-left:15px;margin-top:15px;">
-				<?php
-					if(!empty(Session::get('nama'))){
-				?>
-						<img src="{{ asset('images/graph/'.Session::pull('nama'))}}">
-				<?php
-					}
-				?>		</div>
+			<?php
+				if(Session::get('nama')){
+			?>
+					<img src="{{ asset('images/graph/'.Session::pull('nama'))}}">
+			<?php
+				}
+			?>		
+		</div>
 	</div>
 @stop

@@ -3,7 +3,7 @@
 @section('content')
 
 <script>
-  		var d=document.getElementById("searchIndustriLink");
+  		var d=document.getElementById("daftarUKMIndustriLink");
   		d.className = d.className + " active";
 	</script>
 

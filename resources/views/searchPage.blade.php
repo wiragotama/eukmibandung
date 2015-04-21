@@ -1,7 +1,7 @@
 @extends('guestlayout')
 @section('content')
 	<script>
-  		var d=document.getElementById("searchLink");
+  		var d=document.getElementById("daftarUKMIndustriLink");
   		d.className = d.className + " active";
 	</script>
 	
