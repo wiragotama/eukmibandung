@@ -13,7 +13,7 @@
 		  <div class="contact-form">
 			<h3>Dashboard Perkembangan UKM Indag</h3>
 				<?php
-					echo Form::open(array('url' => '/create_graph'));
+					echo Form::open(array('url' => '/create_graph_dinas'));
 						$ukms = DB::table('ukm')->select('no_registrasi','nama_perusahaan')->get();
 						$ukms = json_decode(json_encode($ukms),true);
 						$industries = DB::table('industri')->select('no_registrasi','nama_perusahaan')->get();

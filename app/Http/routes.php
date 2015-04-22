@@ -61,6 +61,7 @@ Route::get('dashboardUKMINMessages', 'dashboardMessagesController@ukmin');
 
 Route::get('graph', 'GraphController@index');
 Route::post('create_graph', 'GraphController@create_graph');
+Route::post('create_graph_dinas', 'GraphController@create_graph_dinas');
 Route::get('create_graph',function(){
 	return View::make('profitGrowth');
 });
