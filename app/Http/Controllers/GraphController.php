@@ -5,7 +5,7 @@ use Input;
 use App\Quotation;
 use Session;
 
-/* Include kelas untuk graph */
+/* Include kelas untuk graph revisi */
 require_once(public_path()."/jpgraph/src/jpgraph.php");
 require_once(public_path()."/jpgraph/src/jpgraph_line.php");
 class GraphController extends Controller {
