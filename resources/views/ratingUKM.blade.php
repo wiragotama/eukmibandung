@@ -19,18 +19,19 @@
 								    // echo ('<td>'.$row->id_ukm.'</td>');
 								    echo ('<h1 align="center" class="media-heading"><b>'.$row->nama_perusahaan.'</b></h1>');
 								    echo ('<div><br></div>');
-								    echo ('<h4><b>Deskripsi</b></h4><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>');
-								    echo ('<h5>'.$row->deskripsi.'</h5>');
-								    echo ('<h4><b>Pemilik</b></h4><span class="glyphicon glyphicon-user" aria-hidden="true"></span>');
-								    echo ('<h5>'.$row->pemilik.'</h5>');
-								    echo ('<h4><b>Produk</b></h4><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>');
-								    echo ('<h5>'.$row->produk.'</h5>');
-								    echo ('<h4><b>Kontak</b></h4><span class="glyphicon glyphicon-phone" aria-hidden="true"></span>');
-								    echo ('<h5>'.$row->kontak.'</h5>');
-								    echo ('<h4><b>Alamat</b></h4><span class="glyphicon glyphicon-home" aria-hidden="true"></span>');
-								    echo ('<h5>'.$row->alamat.'</h5>');
-								    echo ('<h4><b>Rating</b></h4>');
-								    echo ('<div><h4><span class="glyphicon glyphicon-star" aria-hidden="true"></span>'.round($row->rating, 2).' dari '.$row->jumlah_pemberi_rating.' orang</h4></div>'); 
+								    echo ('<div class="row"><div class="col-xs-6 col-md-4"><h4><b>Deskripsi</b></h4></div>');
+								    echo ('<div class="col-xs-12 col-md-8"><h5>: '.$row->deskripsi.'</h5></div></div>');
+								    echo ('<div class="row"><div class="col-xs-6 col-md-4"><h4><b>Pemilik</b></h4></div>');
+								    echo ('<div class="col-xs-12 col-md-8"><h5>: '.$row->pemilik.'</h5></div></div>');
+								    echo ('<div class="row"><div class="col-xs-6 col-md-4"><h4><b>Produk</b></h4></div>');
+								    echo ('<div class="col-xs-12 col-md-8"><h5>: '.$row->produk.'</h5></div></div>');
+								    echo ('<div class="row"><div class="col-xs-6 col-md-4"><h4><b>Kontak</b></h4></div>');
+								    echo ('<div class="col-xs-12 col-md-8"><h5>: '.$row->kontak.'</h5></div></div>');
+								    echo ('<div class="row"><div class="col-xs-6 col-md-4"><h4><b>Alamat</b></h4></div>');
+								    echo ('<div class="col-xs-12 col-md-8"><h5>: '.$row->alamat.'</h5></div></div>');
+								    echo ('<div class="row"><div class="col-xs-6 col-md-4"><h4><b>Rating</b></h4></div>');
+								    echo ('<div class="col-xs-12 col-md-8"><h5>: '.round($row->rating, 2).' dari '.$row->jumlah_pemberi_rating.' orang</h5></div></div>');
+								   
 								   	?>
 										<h4><b>Beri Rating</b></h4>
 										<?php
