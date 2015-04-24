@@ -195,7 +195,7 @@ class GraphController extends Controller {
 			return view('dashboardReport');
 		}else{
 			Session::put('nama',"");
-			return view('dashboarReport');
+			return view('dashboardReport');
 		}
 	}
 }
