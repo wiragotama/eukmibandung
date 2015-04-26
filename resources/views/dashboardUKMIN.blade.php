@@ -11,15 +11,15 @@
 		  	<h2>Update</h2>
 			    <?php
 			    	if (Session::get('role')=='industri')
-			    		echo('<form id="" onsubmit="#" action="http://localhost:8000/updateIndustriUKMIN?id='.Session::get('id').'" method="POST">');
+			    		echo('<form id="" onsubmit="#" action="/updateIndustriUKMIN?id='.Session::get('id').'" method="POST">');
 			    	else if (Session::get('role')=='ukm')
-			    		echo('<form id="" onsubmit="#" action="http://localhost:8000/updateUKMUKMIN?id='.Session::get('id').'" method="POST">');
+			    		echo('<form id="" onsubmit="#" action="/updateUKMUKMIN?id='.Session::get('id').'" method="POST">');
 
 			    ?>
 			    	<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			    		<?php
 
-			    		$result = DB::select('select * from '.Session::get('role').' where id_'.Session::get('role').'='.Session::get('id'));
+			    		$result = DB::select('select * from '.'ukmin_'.Session::get('role').' where id_'.Session::get('role').'='.Session::get('id'));
 
 			    		foreach ($result as $row) {
 			    		  	# code... 

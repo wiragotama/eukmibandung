@@ -25,7 +25,7 @@
 			        </thead>
 			        <tbody>
 			        	<?php
-			        		$results = DB::select('select id_verifikasi, no_registrasi, status from verifikasi');  		
+			        		$results = DB::select('select id_verifikasi, no_registrasi, status from ukmin_verifikasi');  		
 			        		foreach($results as $row)
 			        		{
 			        			echo('<tr>');

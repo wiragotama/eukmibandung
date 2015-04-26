@@ -12,7 +12,7 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="menu nav navbar-nav navbar-right">
 						<li>
-							<form id="searchForm" onsubmit="#" action="http://localhost:8000/search" method="POST">
+							<form id="searchForm" onsubmit="#" action="/search" method="POST">
 								<input type="hidden" name="_token" value="{{ csrf_token() }}">
 									<input id="keyword" name="keyword" type="text" class="text" placeholder="KEYWORD" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'KEYWORD';}"> </input>
 						</li>
@@ -46,7 +46,7 @@
 			        <tbody>
 			        	<?php
 			        		$keyword = Input::get('keyword');
-			        		$results = DB::select('select nama_perusahaan,produk,deskripsi,alamat,kontak,rating from ukm where produk like "%'.$keyword.'%" or nama_perusahaan like "%'.$keyword.'%" order by rating desc');  		
+			        		$results = DB::select('select nama_perusahaan,produk,deskripsi,alamat,kontak,rating from ukmin_ukm where produk like "%'.$keyword.'%" or nama_perusahaan like "%'.$keyword.'%" order by rating desc');  		
 			        		if($results!=NULL)
 		        			{
 			        			foreach($results as $row)
@@ -79,7 +79,7 @@
 			        <tbody>
 			        	<?php
 			        		$keyword = Input::get('keyword');
-			        		$results = DB::select('select nama_perusahaan,produk,deskripsi,alamat,kontak,rating from industri where produk like "%'.$keyword.'%" or nama_perusahaan like "%'.$keyword.'%" order by rating desc');  		
+			        		$results = DB::select('select nama_perusahaan,produk,deskripsi,alamat,kontak,rating from ukmin_industri where produk like "%'.$keyword.'%" or nama_perusahaan like "%'.$keyword.'%" order by rating desc');  		
 			        		if($results!=NULL)
 		        			{
 			        			foreach($results as $row)

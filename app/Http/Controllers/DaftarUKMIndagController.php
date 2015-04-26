@@ -50,7 +50,7 @@ class DaftarUKMIndagController extends Controller {
 
 	public function beriRatingUKM()
 	{
-		$results = DB::select('select rating, jumlah_pemberi_rating from ukm where  id_ukm='.$_GET['id']);
+		$results = DB::select('select rating, jumlah_pemberi_rating from ukmin_ukm where id_ukm='.$_GET['id']);
 		$rating=0;
 		$juml_pemberi=0;
 		foreach ($results as $result) {
@@ -62,7 +62,7 @@ class DaftarUKMIndagController extends Controller {
 		$rating += $value;
 		$rating /= ($juml_pemberi+1);
 
-		$query = "update ukm set rating='".$rating."' , jumlah_pemberi_rating=jumlah_pemberi_rating+1 where id_ukm=".$_GET['id'];
+		$query = "update ukmin_ukm set rating='".$rating."' , jumlah_pemberi_rating=jumlah_pemberi_rating+1 where id_ukm=".$_GET['id'];
 		$results = DB::update($query);
 
 		return redirect('./daftarUKMIndag');
@@ -70,7 +70,7 @@ class DaftarUKMIndagController extends Controller {
 
 	public function beriRatingIndustri()
 	{
-		$results = DB::select('select rating, jumlah_pemberi_rating from industri where  id_industri='.$_GET['id']);
+		$results = DB::select('select rating, jumlah_pemberi_rating from ukmin_industri where id_industri='.$_GET['id']);
 		$rating=0;
 		$juml_pemberi=0;
 		foreach ($results as $result) {
@@ -82,7 +82,7 @@ class DaftarUKMIndagController extends Controller {
 		$rating += $value;
 		$rating /= ($juml_pemberi+1);
 
-		$query = "update industri set rating='".$rating."' , jumlah_pemberi_rating=jumlah_pemberi_rating+1 where id_industri=".$_GET['id'];
+		$query = "update ukmin_industri set rating='".$rating."' , jumlah_pemberi_rating=jumlah_pemberi_rating+1 where id_industri=".$_GET['id'];
 		$results = DB::update($query);
 
 		return redirect('./daftarUKMIndag');

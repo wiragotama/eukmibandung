@@ -25,7 +25,7 @@
 			<div class="col-md-8">
 			  <div class="contact-form">
 			  	<h2>Membuat Industri</h2>
-				    <form id="loginForm" onsubmit="#" action="http://localhost:8000/createIndustri" method="POST">
+				    <form id="loginForm" onsubmit="#" action="/createIndustri" method="POST">
 				    	<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				    	<div>
 					     	<span>Nomor Registrasi</span>

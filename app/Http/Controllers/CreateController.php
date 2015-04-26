@@ -95,7 +95,7 @@ class CreateController extends Controller {
 			if ($password!="")
 			{
 				try {
-					$results = DB::insert('insert into ukm (username, password, no_registrasi, nama_perusahaan, produk
+					$results = DB::insert('insert into ukmin_ukm (username, password, no_registrasi, nama_perusahaan, produk
 						, pemilik, alamat, deskripsi, kontak) values (?, ?, ?, ?, ?, ?, ?, ?, ?)', array($username, $password, $noreg, $nama, 
 						$produk, $pemilik, $alamat, $deskripsi, $kontak));
 				}
@@ -107,7 +107,7 @@ class CreateController extends Controller {
 			else 
 			{
 				try {
-					$results = DB::insert('insert into ukm (username, no_registrasi, nama_perusahaan, produk
+					$results = DB::insert('insert into ukmin_ukm (username, no_registrasi, nama_perusahaan, produk
 						, pemilik, alamat, deskripsi, kontak) values (?, ?, ?, ?, ?, ?, ?, ?)', array($username, $noreg, $nama, 
 						$produk, $pemilik, $alamat, $deskripsi, $kontak));
 				}
@@ -174,7 +174,7 @@ class CreateController extends Controller {
 			if ($password!="")
 			{
 				try {
-					$results = DB::insert('insert into industri (username, password, no_registrasi, nama_perusahaan, produk
+					$results = DB::insert('insert into ukmin_industri (username, password, no_registrasi, nama_perusahaan, produk
 						, pemilik, alamat, deskripsi, kontak) values (?, ?, ?, ?, ?, ?, ?, ?, ?)', array($username, $password, $noreg, $nama, 
 						$produk, $pemilik, $alamat, $deskripsi, $kontak));
 				}
@@ -186,7 +186,7 @@ class CreateController extends Controller {
 			else 
 			{
 				try {
-					$results = DB::insert('insert into industri (username, no_registrasi, nama_perusahaan, produk
+					$results = DB::insert('insert into ukmin_industri (username, no_registrasi, nama_perusahaan, produk
 						, pemilik, alamat, deskripsi, kontak) values (?, ?, ?, ?, ?, ?, ?, ?)', array($username, $noreg, $nama, 
 						$produk, $pemilik, $alamat, $deskripsi, $kontak));
 				}

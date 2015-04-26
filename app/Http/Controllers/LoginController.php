@@ -51,7 +51,7 @@ class LoginController extends Controller {
 		echo (Input::get('username'));
 		echo (Input::get('password'));
 
-		$results = DB::select('select * from dinas where username="'.$inputUsername.'" and password="'.$inputPassword.'"');
+		$results = DB::select('select * from ukmin_dinas where username="'.$inputUsername.'" and password="'.$inputPassword.'"');
 		if ($results!=NULL) 
 		{
 			//$this->middleware('auth');
@@ -62,14 +62,14 @@ class LoginController extends Controller {
 		else 
 		{
 			//tes apakah ada di tabel ukm/industri
-			$results = DB::select('select * from industri where username="'.$inputUsername.'" and password="'.$inputPassword.'"');
+			$results = DB::select('select * from ukmin_industri where username="'.$inputUsername.'" and password="'.$inputPassword.'"');
 			if ($results!=NULL)
 			{
 				foreach ($results as $row) {
 					$no_registrasi = $row->no_registrasi;
 				}
 
-				$results = DB::select('select * from verifikasi where no_registrasi="'.$no_registrasi.'" and status="verified"');
+				$results = DB::select('select * from ukmin_verifikasi where no_registrasi="'.$no_registrasi.'" and status="verified"');
 				if ($results!=NULL)
 				{
 					Session::put('username', $inputUsername);
@@ -82,14 +82,14 @@ class LoginController extends Controller {
 					return redirect('/login');
 			}
 			else {
-				$results = DB::select('select * from ukm where username="'.$inputUsername.'" and password="'.$inputPassword.'"');
+				$results = DB::select('select * from ukmin_ukm where username="'.$inputUsername.'" and password="'.$inputPassword.'"');
 				if ($results!=NULL)
 				{
 					foreach ($results as $row) {
 						$no_registrasi = $row->no_registrasi;
 					}
 
-					$results = DB::select('select * from verifikasi where no_registrasi="'.$no_registrasi.'" and status="verified"');
+					$results = DB::select('select * from ukmin_verifikasi where no_registrasi="'.$no_registrasi.'" and status="verified"');
 					if ($results!=NULL)
 					{
 						Session::put('username', $inputUsername);

@@ -15,11 +15,11 @@
 		  <div class="contact-form">
 		  	<h2>Update Industri</h2>
 			    <?php
-			    	echo('<form id="loginForm" onsubmit="#" action="http://localhost:8000/updateIndustri?id='.$_GET['id'].'" method="POST">');
+			    	echo('<form id="loginForm" onsubmit="#" action="/updateIndustri?id='.$_GET['id'].'" method="POST">');
 			    ?>
 			    	<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			    		<?php
-			    		$result = DB::select('select * from industri where id_industri='.$_GET['id']);
+			    		$result = DB::select('select * from ukmin_industri where id_industri='.$_GET['id']);
 			    		foreach ($result as $row) {
 			    		  	# code... 
 					    	echo('<div>');
@@ -36,19 +36,19 @@
 						    echo('</div>');
 						    echo('<div>');
 						     	echo('<span>Nama Perusahaan</span>');
-						    	echo('<span><input name="namaperusahaan" type="text" class="form-control" id="namaperusahaan" value='.$row->nama_perusahaan.'></span>');
+						    	echo('<span><input name="namaperusahaan" type="text" class="form-control" id="namaperusahaan" value='.'"'.$row->nama_perusahaan.'"'.'></span>');
 						    echo('</div>');
 						    echo('<div>');
 						     	echo('<span>Produk</span>');
-						    	echo('<span><input name="produk" type="text" class="form-control" id="produk" value='.$row->produk.'></span>');
+						    	echo('<span><input name="produk" type="text" class="form-control" id="produk" value='.'"'.$row->produk.'"'.'></span>');
 						    echo('</div>');
 						    echo('<div>');
 						     	echo('<span>Pemilik</span>');
-						    	echo('<span><input name="pemilik" type="text" class="form-control" id="pemilik" value='.$row->pemilik.'></span>');
+						    	echo('<span><input name="pemilik" type="text" class="form-control" id="pemilik" value='.'"'.$row->pemilik.'"'.'></span>');
 						    echo('</div>');
 						    echo('<div>');
 						     	echo('<span>Kontak</span>');
-						    	echo('<span><input name="kontak" type="text" class="form-control" id="kontak" value='.$row->kontak.'></span>');
+						    	echo('<span><input name="kontak" type="text" class="form-control" id="kontak" value='.'"'.$row->kontak.'"'.'></span>');
 						    echo('</div>');
 						    echo('<div>');
 						    	echo('<span>Alamat</span>');
@@ -61,7 +61,7 @@
 
 						   echo('<div>');
 						   		echo('<span><input type="submit" value="Update"></span>');
-						   echo('</div>');
+						   echo('</div>');s
 						}
 			    echo('</form>');
 			  ?>

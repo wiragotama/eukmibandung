@@ -90,7 +90,7 @@ class UpdateProfileController extends Controller {
 			{
 				try {
 					//$query = 'update ukm set username="'.$username.'" where id_ukm='.$_GET['id'];
-					$query = "update ukm set username='".$username."', password='".$password."', no_registrasi='".$noreg."', nama_perusahaan='".$nama."', produk='".$produk."', pemilik='".$pemilik."', 
+					$query = "update ukmin_ukm set username='".$username."', password='".$password."', no_registrasi='".$noreg."', nama_perusahaan='".$nama."', produk='".$produk."', pemilik='".$pemilik."', 
 					alamat='".$alamat."', deskripsi='".$deskripsi."', kontak='".$kontak."' where id_ukm=".$_GET['id'];
 					$results = DB::update($query);
 				}
@@ -102,7 +102,7 @@ class UpdateProfileController extends Controller {
 			else 
 			{
 				try {
-					$query = "update ukm set username='".$username."', no_registrasi='".$noreg."', nama_perusahaan='".$nama."', produk='".$produk."', pemilik='".$pemilik."', 
+					$query = "update ukmin_ukm set username='".$username."', no_registrasi='".$noreg."', nama_perusahaan='".$nama."', produk='".$produk."', pemilik='".$pemilik."', 
 					alamat='".$alamat."', deskripsi='".$deskripsi."', kontak='".$kontak."' where id_ukm=".$_GET['id'];
 					$results = DB::update($query);
 				}
@@ -170,7 +170,7 @@ class UpdateProfileController extends Controller {
 			if ($password!="")
 			{
 				try {
-					$query = "update industri set username='".$username."', password='".$password."', no_registrasi='".$noreg."', nama_perusahaan='".$nama."', produk='".$produk."', pemilik='".$pemilik."', 
+					$query = "update ukmin_industri set username='".$username."', password='".$password."', no_registrasi='".$noreg."', nama_perusahaan='".$nama."', produk='".$produk."', pemilik='".$pemilik."', 
 					alamat='".$alamat."', deskripsi='".$deskripsi."', kontak='".$kontak."' where id_industri=".$_GET['id'];
 					$results = DB::update($query);
 				}
@@ -182,7 +182,7 @@ class UpdateProfileController extends Controller {
 			else 
 			{
 				try {
-					$query = "update industri set username='".$username."', no_registrasi='".$noreg."', nama_perusahaan='".$nama."', produk='".$produk."', pemilik='".$pemilik."', 
+					$query = "update ukmin_industri set username='".$username."', no_registrasi='".$noreg."', nama_perusahaan='".$nama."', produk='".$produk."', pemilik='".$pemilik."', 
 					alamat='".$alamat."', deskripsi='".$deskripsi."', kontak='".$kontak."' where id_industri=".$_GET['id'];
 					$results = DB::update($query);
 				}
@@ -209,7 +209,7 @@ class UpdateProfileController extends Controller {
 
 		
 		try {
-			$query = "update verifikasi set status='".$status."' where id_verifikasi=".$_GET['id'];
+			$query = "update ukmin_verifikasi set status='".$status."' where id_verifikasi=".$_GET['id'];
 			$results = DB::update($query);
 		}
 		catch (\Exception $e) 

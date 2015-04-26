@@ -15,12 +15,12 @@
 		  <div class="contact-form">
 		  	<h2>Update Verifikasi</h2>
 		  		<?php
-			    	echo('<form id="loginForm" onsubmit="#" action="http://localhost:8000/updateVerifikasi?id='.$_GET['id'].'" method="POST">');
+			    	echo('<form id="loginForm" onsubmit="#" action="/updateVerifikasi?id='.$_GET['id'].'" method="POST">');
 			    ?>
 			    	<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			    	<div>
 			    		<?php
-			    			$results = DB::select('select id_verifikasi, no_registrasi, status from verifikasi where id_verifikasi='.$_GET['id']);
+			    			$results = DB::select('select id_verifikasi, no_registrasi, status from ukmin_verifikasi where id_verifikasi='.$_GET['id']);
 					    	foreach($results as $row)
 			        		{
 							    echo ('<h5> id verifikasi = '.$row->id_verifikasi.'</h5>');

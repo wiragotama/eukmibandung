@@ -8,7 +8,7 @@
 	<link href="css/loginStyle.css" rel='stylesheet' type='text/css' />
 	<div class="container">
 		<div class="login-form">
-			<form id="searchForm" onsubmit="#" action="http://localhost:8000/search" method="POST">
+			<form id="searchForm" onsubmit="#" action="/search" method="POST">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				<li>
 					<input id="keyword" name="keyword" type="text" class="text" placeholder="KEYWORD" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'KEYWORD';}"> </input>
