@@ -85,7 +85,6 @@ class GraphController extends Controller {
 				$profit[$i] = NULL;
 			}
 		}
-		print_r($profit);
 		if($jumlah_data >0){
 			/* Pembuatan Grafik */
 			$graph = new \Graph(850,400);
@@ -95,7 +94,6 @@ class GraphController extends Controller {
 			$graph->img->SetAntiAliasing(false);
 			$graph->title->Set('Profit Tahun'.$tahun);
 			$graph->SetBox(false);
-			$graph->img->SetAntiAliasing();
 
 			$graph->yaxis->HideZeroLabel();
 			$graph->yaxis->HideLine(false);
@@ -105,13 +103,16 @@ class GraphController extends Controller {
 			$graph->xgrid->SetLineStyle("solid");
 			$graph->xaxis->SetTickLabels(array("Januari", "Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"));
 			$graph->xgrid->SetColor('#E3E3E3');
-
+			$graph->ygrid->SetFill(false);
 			// Create the first line
 			$p1 = new \LinePlot($profit);
 			$graph->Add($p1);
+			$p1->SetCenter();
 			$p1->SetColor("#6495ED");
 			$p1->SetLegend('Profit');
+			$p1->value->SetMargin(14);
 			$graph->legend->SetFrameWeight(1);
+			$p1->mark->SetType(MARK_FILLEDCIRCLE,'',1.0);
 			
 			$nama = $nomor_registrasi."-".$tahun.".jpg";
 			$path = public_path()."\images\graph\\".$nama;
@@ -168,10 +169,12 @@ class GraphController extends Controller {
 			$graph = new \Graph(850,400);
 			$graph->SetScale("textlin");
 			$theme_class=new \UniversalTheme;
+			
 			$graph->SetTheme($theme_class);
 			$graph->img->SetAntiAliasing(false);
 			$graph->title->Set('Profit '.$user.' Tahun'.$tahun);
 			$graph->SetBox(false);
+			
 			$graph->img->SetAntiAliasing();
 
 			$graph->yaxis->HideZeroLabel();
@@ -186,9 +189,12 @@ class GraphController extends Controller {
 			// Create the first line
 			$p1 = new \LinePlot($profit);
 			$graph->Add($p1);
+			$p1->SetCenter();
 			$p1->SetColor("#6495ED");
 			$p1->SetLegend('Profit');
+			$p1->value->SetMargin(14);
 			$graph->legend->SetFrameWeight(1);
+			$p1->mark->SetType(MARK_FILLEDCIRCLE,'',1.0);
 			
 			$nama = $user."-".$tahun.".jpg";
 			$path = public_path()."\images\graph\\".$nama;
