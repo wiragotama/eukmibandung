@@ -13,7 +13,7 @@
 					<div class="media-body">
 					
 						<?php
-				        		$results = DB::select('select id_ukm,nama_perusahaan, pemilik,produk, alamat, kontak, deskripsi, rating, jumlah_pemberi_rating from ukmin_ukm where id_ukm='.$_GET['id']);  		
+				        		$results = DB::select('select id_ukm,nama_perusahaan, pemilik,produk, alamat, kontak, deskripsi, rating, jumlah_pemberi_rating from ppl_ukmin_ukm where id_ukm='.$_GET['id']);  		
 				        		foreach($results as $row)
 				        		{
 								    // echo ('<td>'.$row->id_ukm.'</td>');

@@ -45,21 +45,21 @@ class VerifikasiUKMIndagController extends Controller {
 		$back = "/verifikasiUKMIndag";
 		$insertFail = '/dashboardGuestMessages?message='.$message.'&'.'back='.$back;
 
-		$results = DB::select('select * from ukmin_perijinan where no_registrasi="'.$no_registrasi.'"');
+		$results = DB::select('select * from ppl_ukmin_perijinan where no_registrasi="'.$no_registrasi.'"');
 		if ($results!=NULL) 
 		{
 			$ktp = "";
 			$jenis = "";
 			foreach ($results as $row) {
-				$ktp = $row->ktp;
-				$jenis = "ukmin_".$row->jenis;
+				$ktp = $row->nik;
+				$jenis = "ppl_ukmin_".$row->jenis;
 			}
-			$results = DB::select('select * from ukmin_dukcapil where ktp="'.$ktp.'"');
+			$results = DB::select('select * from ppl_ukmin_dukcapil where nik="'.$ktp.'"');
 
 			if ($results!=NULL)
 			{
 				foreach ($results as $row) {
-					$username = $row->username;
+					$username = $row->nik;
 					$password = $row->password;
 				}
 
@@ -68,7 +68,7 @@ class VerifikasiUKMIndagController extends Controller {
 						, pemilik, alamat, deskripsi, kontak) values (?, ?, ?, ?, ?, ?, ?, ?, ?)', array($username, $password, $no_registrasi, "NA", 
 						"NA", "NA", "NA", "NA", "NA"));
 
-				$results = DB::insert('insert into ukmin_verifikasi (no_registrasi) values (?)', array($no_registrasi));
+				$results = DB::insert('insert into ppl_ukmin_verifikasi (no_registrasi) values (?)', array($no_registrasi));
 				}
 				catch (\Exception $e) 
 				{
@@ -91,7 +91,7 @@ class VerifikasiUKMIndagController extends Controller {
 		}
 		else 
 		{
-			$results = DB::select('select * from ukmin_verifikasi where no_registrasi="'.$no_registrasi.'"');
+			$results = DB::select('select * from ppl_ukmin_verifikasi where no_registrasi="'.$no_registrasi.'"');
 			if ($results!=NULL) 
 			{
 				$status;

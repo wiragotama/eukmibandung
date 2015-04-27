@@ -20,7 +20,7 @@
 			    	<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			    	<div>
 			    		<?php
-			    			$results = DB::select('select id_verifikasi, no_registrasi, status from ukmin_verifikasi where id_verifikasi='.$_GET['id']);
+			    			$results = DB::select('select id_verifikasi, no_registrasi, status from ppl_ukmin_verifikasi where id_verifikasi='.$_GET['id']);
 					    	foreach($results as $row)
 			        		{
 							    echo ('<h5> id verifikasi = '.$row->id_verifikasi.'</h5>');

@@ -33,7 +33,7 @@
 			        <tbody>
 			        	<?php
 			        		$keyword = Input::get('keyword');
-			        		$results = DB::select('select nama_perusahaan,produk,deskripsi,alamat,kontak,rating from ukmin_industri where produk like "%'.$keyword.'%" order by rating desc');  		
+			        		$results = DB::select('select nama_perusahaan,produk,deskripsi,alamat,kontak,rating from ppl_ukmin_industri where produk like "%'.$keyword.'%" order by rating desc');  		
 			        		if($results!=NULL)
 		        			{
 			        			foreach($results as $row)

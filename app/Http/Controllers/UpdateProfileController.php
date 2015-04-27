@@ -90,7 +90,7 @@ class UpdateProfileController extends Controller {
 			{
 				try {
 					//$query = 'update ukm set username="'.$username.'" where id_ukm='.$_GET['id'];
-					$query = "update ukmin_ukm set username='".$username."', password='".$password."', no_registrasi='".$noreg."', nama_perusahaan='".$nama."', produk='".$produk."', pemilik='".$pemilik."', 
+					$query = "update ppl_ukmin_ukm set username='".$username."', password='".$password."', no_registrasi='".$noreg."', nama_perusahaan='".$nama."', produk='".$produk."', pemilik='".$pemilik."', 
 					alamat='".$alamat."', deskripsi='".$deskripsi."', kontak='".$kontak."' where id_ukm=".$_GET['id'];
 					$results = DB::update($query);
 				}
@@ -102,7 +102,7 @@ class UpdateProfileController extends Controller {
 			else 
 			{
 				try {
-					$query = "update ukmin_ukm set username='".$username."', no_registrasi='".$noreg."', nama_perusahaan='".$nama."', produk='".$produk."', pemilik='".$pemilik."', 
+					$query = "update ppl_ukmin_ukm set username='".$username."', no_registrasi='".$noreg."', nama_perusahaan='".$nama."', produk='".$produk."', pemilik='".$pemilik."', 
 					alamat='".$alamat."', deskripsi='".$deskripsi."', kontak='".$kontak."' where id_ukm=".$_GET['id'];
 					$results = DB::update($query);
 				}

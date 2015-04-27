@@ -39,7 +39,7 @@
 			        </thead>
 			        <tbody>
 			        	<?php
-			        		$results = DB::select('select id_ukm,kontak, deskripsi, nama_perusahaan from ukmin_ukm');  		
+			        		$results = DB::select('select id_ukm,kontak, deskripsi, nama_perusahaan from ppl_ukmin_ukm');  		
 			        		foreach($results as $row)
 			        		{
 			        			echo('<tr>');
@@ -69,7 +69,7 @@
 			        </thead>
 			        <tbody>
 			        	<?php
-			        		$results = DB::select('select id_industri, kontak, deskripsi, nama_perusahaan from ukmin_industri');  		
+			        		$results = DB::select('select id_industri, kontak, deskripsi, nama_perusahaan from ppl_ukmin_industri');  		
 			        		foreach($results as $row)
 			        		{
 			        			echo('<tr>');

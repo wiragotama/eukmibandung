@@ -25,7 +25,7 @@
 			        </thead>
 			        <tbody>
 			        	<?php
-			        		$results = DB::select('select id_industri, pemilik, nama_perusahaan from ukmin_industri');  		
+			        		$results = DB::select('select id_industri, pemilik, nama_perusahaan from ppl_ukmin_industri');  		
 			        		foreach($results as $row)
 			        		{
 			        			echo('<tr>');

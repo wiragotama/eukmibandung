@@ -44,7 +44,7 @@ class GraphController extends Controller {
 		$profit = Input::get('profit');
 		$no_registrasi = Session::get('no_registrasi');
 		$bulan = date("Y-m-d");
-		$query = DB::table('ukmin_profit')->insertGetId(array('no_registrasi'=>$no_registrasi,'profit'=> $profit, 'bulan' =>$bulan));
+		$query = DB::table('ppl_ukmin_profit')->insertGetId(array('no_registrasi'=>$no_registrasi,'profit'=> $profit, 'bulan' =>$bulan));
 		if($query != NULL){
 			$notifikasi = "Input profit berhasil";
 			
@@ -70,7 +70,7 @@ class GraphController extends Controller {
 		$nomor_registrasi = Input::get('no_registrasi');
 		//Session::get('nomor_registrasi');
 		$profit = array(0,0,0,0,0,0,0,0,0,0,0,0);
-		$data = DB::table('ukmin_profit')->orderBy('bulan','asc')->select('profit','bulan')->where('no_registrasi',$nomor_registrasi)->get();
+		$data = DB::table('ppl_ukmin_profit')->orderBy('bulan','asc')->select('profit','bulan')->where('no_registrasi',$nomor_registrasi)->get();
 		//print_r($data);
 		$data = json_decode(json_encode($data),true);
 		
@@ -146,7 +146,7 @@ class GraphController extends Controller {
 		$nomor_registrasi = Input::get('no_registrasi');
 
 		//Session::get('nomor_registrasi');
-		$data = DB::table('ukmin_profit')->orderBy('bulan','asc')->select('profit','bulan')->where('no_registrasi','=',$user)->get();
+		$data = DB::table('ppl_ukmin_profit')->orderBy('bulan','asc')->select('profit','bulan')->where('no_registrasi','=',$user)->get();
 		$data = json_decode(json_encode($data),true);
 		for($i =0;$i<count($data);$i++){
 			// if(preg_match("/$tahun-0(.*)-/",$data[$i]['bulan'],$result)){
