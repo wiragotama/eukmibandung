@@ -55,14 +55,7 @@ class GraphController extends Controller {
 		return redirect('/profitGrowth');
 	}
 	public function create_graph(){
-        // $parameterr = array();
-        // $parameter['param'] = "Hello World!!";
- 
-        // $pdf = \PDF::loadView('graphTemplate', $parameter)->save(public_path()."Hello.pdf"); //save to file
-        // return $pdf->stream("Hello.pdf"); //stream
-		
-		
-		/* Inisiasi Nilai */
+
 		$i;
 		$jumlah_data = 0;
 		$tahun = Input::get('tahun');
@@ -130,11 +123,6 @@ class GraphController extends Controller {
 	}
 	
 	public function create_graph_dinas(){
-        // $parameterr = array();
-        // $parameter['param'] = "Hello World!!";
- 
-        // $pdf = \PDF::loadView('graphTemplate', $parameter)->save(public_path()."Hello.pdf"); //save to file
-        // return $pdf->stream("Hello.pdf"); //stream
 		
 		$profit = array(0,0,0,0,0,0,0,0,0,0,0,0,0);
 		/* Inisiasi Nilai */

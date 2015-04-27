@@ -61,7 +61,7 @@
 
 						   echo('<div>');
 						   		echo('<span><input type="submit" value="Update"></span>');
-						   echo('</div>');s
+						   echo('</div>');
 						}
 			    echo('</form>');
 			  ?>
