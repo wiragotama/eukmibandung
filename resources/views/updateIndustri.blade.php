@@ -19,7 +19,7 @@
 			    ?>
 			    	<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			    		<?php
-			    		$result = DB::select('select * from ukmin_industri where id_industri='.$_GET['id']);
+			    		$result = DB::select('select * from ppl_ukmin_industri where id_industri='.$_GET['id']);
 			    		foreach ($result as $row) {
 			    		  	# code... 
 					    	echo('<div>');

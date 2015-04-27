@@ -14,9 +14,9 @@
 			<h3>Dashboard Perkembangan UKM Indag</h3>
 				<?php
 					echo Form::open(array('url' => '/create_graph_dinas'));
-						$ukms = DB::table('ukmin_ukm')->select('no_registrasi','nama_perusahaan')->get();
+						$ukms = DB::table('ppl_ukmin_ukm')->select('no_registrasi','nama_perusahaan')->get();
 						$ukms = json_decode(json_encode($ukms),true);
-						$industries = DB::table('ukmin_industri')->select('no_registrasi','nama_perusahaan')->get();
+						$industries = DB::table('ppl_ukmin_industri')->select('no_registrasi','nama_perusahaan')->get();
 						$industries = json_decode(json_encode($industries),true);
 						echo '<select name="user">';
 						foreach($ukms as $ukm){

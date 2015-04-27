@@ -52,7 +52,7 @@ class DeleteController extends Controller {
 	
 		try {
 			//$query = 'update ukm set username="'.$username.'" where id_ukm='.$_GET['id'];
-			$query = "delete from ukmin_industri where id_industri=".$_GET['id'];
+			$query = "delete from ppl_ukmin_industri where id_industri=".$_GET['id'];
 			$results = DB::delete($query);
 		}
 		catch (\Exception $e) 
@@ -74,7 +74,7 @@ class DeleteController extends Controller {
 	
 		try {
 			//$query = 'update ukm set username="'.$username.'" where id_ukm='.$_GET['id'];
-			$query = "delete from ukmin_ukm where id_ukm=".$_GET['id'];
+			$query = "delete from ppl_ukmin_ukm where id_ukm=".$_GET['id'];
 			$results = DB::delete($query);
 		}
 		catch (\Exception $e) 
