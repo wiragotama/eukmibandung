@@ -143,6 +143,7 @@ class GraphController extends Controller {
 		$tahun = Input::get('tahun');
 		//Session::put('nomor_registrasi', 123123);
 		$nomor_registrasi = Input::get('no_registrasi');
+
 		//Session::get('nomor_registrasi');
 		$data = DB::table('ukmin_profit')->orderBy('bulan','asc')->select('profit','bulan')->where('no_registrasi','=',$user)->get();
 		$data = json_decode(json_encode($data),true);
