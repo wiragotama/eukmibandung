@@ -66,10 +66,12 @@ class GraphController extends Controller {
 		$i;
 		$jumlah_data = 0;
 		$tahun = Input::get('tahun');
-		Session::put('nomor_registrasi', 123123);
-		$nomor_registrasi = Session::get('nomor_registrasi');
+		//Session::put('nomor_registrasi', 123123);
+		$nomor_registrasi = Input::get('no_registrasi');
+		//Session::get('nomor_registrasi');
 		$profit = array(0,0,0,0,0,0,0,0,0,0,0,0);
-		$data = DB::table('ukmin_profit')->orderBy('bulan','asc')->select('profit','bulan')->where('no_registrasi','=',$nomor_registrasi)->get();
+		$data = DB::table('ukmin_profit')->orderBy('bulan','asc')->select('profit','bulan')->where('no_registrasi',$nomor_registrasi)->get();
+		//print_r($data);
 		$data = json_decode(json_encode($data),true);
 		
 		for($i =0;$i<count($data);$i++){
@@ -83,7 +85,7 @@ class GraphController extends Controller {
 				$profit[$i] = NULL;
 			}
 		}
-		
+		print_r($profit);
 		if($jumlah_data >0){
 			/* Pembuatan Grafik */
 			$graph = new \Graph(850,400);
@@ -133,29 +135,32 @@ class GraphController extends Controller {
         // $pdf = \PDF::loadView('graphTemplate', $parameter)->save(public_path()."Hello.pdf"); //save to file
         // return $pdf->stream("Hello.pdf"); //stream
 		
-		
+		$profit = array(0,0,0,0,0,0,0,0,0,0,0,0,0);
 		/* Inisiasi Nilai */
+		$user = Input::get('user');
 		$i;
 		$jumlah_data = 0;
-		$user = Input::get('user');
 		$tahun = Input::get('tahun');
 		//Session::put('nomor_registrasi', 123123);
-		//$nomor_registrasi = Session::get('nomor_registrasi');
-		$profit = array(0,0,0,0,0,0,0,0,0,0,0,0);
+		$nomor_registrasi = Input::get('no_registrasi');
+		//Session::get('nomor_registrasi');
 		$data = DB::table('ukmin_profit')->orderBy('bulan','asc')->select('profit','bulan')->where('no_registrasi','=',$user)->get();
 		$data = json_decode(json_encode($data),true);
-		
 		for($i =0;$i<count($data);$i++){
+			// if(preg_match("/$tahun-0(.*)-/",$data[$i]['bulan'],$result)){
+				// $profit[$result['1']-1] += $data[$i]['profit'];
+				// $jumlah_data++;
+			// }
 			if(preg_match("/$tahun-0(.*)-/",$data[$i]['bulan'],$result)){
-				$profit[$result['1']-1] += $data[$i]['profit'];
-				$jumlah_data++;
+				 $profit[$result['1']-1] += $data[$i]['profit'];
+				 $jumlah_data++;
 			}
 		}
-		for($i =0;$i<count($profit);$i++){
-			if($profit[$i] == 0){
-				$profit[$i] = NULL;
-			}
-		}
+		 for($i =0;$i<count($profit);$i++){
+			 if($profit[$i] == 0){
+				 $profit[$i] = NULL;
+			 }
+		 }
 		
 		if($jumlah_data >0){
 			/* Pembuatan Grafik */
