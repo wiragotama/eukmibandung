@@ -12,8 +12,7 @@
 				<?php
 					echo Form::open(array('url' => '/create_graph'));
 						echo Form::selectRange('tahun', 2014, 2016);
-						echo Form::text('no_registrasi',Session::get('no_registrasi'));
-
+						echo Form::hidden('no_registrasi',Session::get('no_registrasi'));
 						echo Form::submit('Generate Grafik');
 					echo Form::close();
 				?>
