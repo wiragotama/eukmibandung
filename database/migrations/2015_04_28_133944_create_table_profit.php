@@ -15,8 +15,8 @@ class CreateTableProfit extends Migration {
 		Schema::create('ppl_ukmin_profit', function(Blueprint $table)
 		{
 			$table->increments('id_transaksi')->unique();
-			$table->string('nik', 20);
-			$table->string('jenis', 20);
+			$table->string('profit', 25);
+			$table->date('bulan');
 			$table->string('no_registrasi', 20);
 		});
 	}

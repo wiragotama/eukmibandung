@@ -14,7 +14,7 @@ class CreateTableVerifikasi extends Migration {
 	{
 		Schema::create('ppl_ukmin_verifikasi', function(Blueprint $table)
 		{
-			$table->increments('id_verifikasi')->unique();;
+			$table->increments('id_verifikasi')->unique();
 			$table->string('no_registrasi', 20);
 			$table->string('username_dinas', 20);
 			$table->string('status', 20);

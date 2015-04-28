@@ -14,8 +14,9 @@ class CreateTableDinas extends Migration {
 	{
 		Schema::create('ppl_ukmin_dinas', function(Blueprint $table)
 		{
-			$table->string('username', 20)->unique();
-			$table->string('password', 20)->unique();
+			$table->string('username', 20);
+			$table->string('password', 20);
+			$table->primary(array('username', 'password'));
 		});
 	}
 

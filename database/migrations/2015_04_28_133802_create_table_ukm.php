@@ -17,7 +17,7 @@ class CreateTableUkm extends Migration {
 			$table->increments('id_ukm')->unique();
 			$table->string('username', 20);
 			$table->string('password', 20);
-			$table->string('no_registrasi', 20)->unique();
+			$table->string('no_registrasi', 20);
 			$table->string('nama_perusahaan');
 			$table->longText('produk');
 			$table->string('pemilik', 50);
@@ -26,6 +26,7 @@ class CreateTableUkm extends Migration {
 			$table->string('kontak', 100);
 			$table->float('rating');
 			$table->integer('jumlah_pembeli_rating');
+			$table->index('no_registrasi');
 		});
 	}
 

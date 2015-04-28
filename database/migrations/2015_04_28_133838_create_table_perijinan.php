@@ -14,9 +14,11 @@ class CreateTablePerijinan extends Migration {
 	{
 		Schema::create('ppl_ukmin_perijinan', function(Blueprint $table)
 		{
-			$table->string('nik', 20)->unique();
-			$table->string('no_registrasi', 20)->unique();
+			$table->string('nik', 20);
+			$table->string('no_registrasi', 20);
 			$table->string('jenis', 20);
+			$table->index('nik');
+			$table->index('no_registrasi');
 		});	
 	}
 
