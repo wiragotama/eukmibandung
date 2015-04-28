@@ -20,12 +20,12 @@
 					//echo Session::get('no_registrasi');
 				?>
 				<hr/>
-				<h3> Input Profit Bulanan </h3>
+				<h3> Input Income Bulanan </h3>
 				<?php
 					echo Form::open(array('url' => '/profitGrowth'));
 						echo Form::label(date("Y-m-d"));
 						echo Form::text('profit', '100000',array('style' => 'width: 100px;margin-left:5px;'));
-						echo Form::submit('Input Profit');
+						echo Form::submit('Input Income');
 					echo Form::close();
 				?>
 				<?php

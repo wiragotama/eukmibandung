@@ -46,10 +46,10 @@ class GraphController extends Controller {
 		$bulan = date("Y-m-d");
 		$query = DB::table('ppl_ukmin_profit')->insertGetId(array('no_registrasi'=>$no_registrasi,'profit'=> $profit, 'bulan' =>$bulan));
 		if($query != NULL){
-			$notifikasi = "Input profit berhasil";
+			$notifikasi = "Input income berhasil";
 			
 		}else{
-			$notifikasi = "Input profit gagal";
+			$notifikasi = "Input income gagal";
 		}
 		Session::put('notifikasi',$notifikasi);
 		return redirect('/profitGrowth');
@@ -85,7 +85,7 @@ class GraphController extends Controller {
 			$theme_class=new \UniversalTheme;
 			$graph->SetTheme($theme_class);
 			$graph->img->SetAntiAliasing(false);
-			$graph->title->Set('Profit Tahun'.$tahun);
+			$graph->title->Set('Income Tahun'.$tahun);
 			$graph->SetBox(false);
 
 			$graph->yaxis->HideZeroLabel();
@@ -102,7 +102,7 @@ class GraphController extends Controller {
 			$graph->Add($p1);
 			$p1->SetCenter();
 			$p1->SetColor("#6495ED");
-			$p1->SetLegend('Profit');
+			$p1->SetLegend('Income');
 			$p1->value->SetMargin(14);
 			$graph->legend->SetFrameWeight(1);
 			$p1->mark->SetType(MARK_FILLEDCIRCLE,'',1.0);
@@ -160,7 +160,7 @@ class GraphController extends Controller {
 			
 			$graph->SetTheme($theme_class);
 			$graph->img->SetAntiAliasing(false);
-			$graph->title->Set('Profit '.$user.' Tahun'.$tahun);
+			$graph->title->Set('Income '.$user.' Tahun'.$tahun);
 			$graph->SetBox(false);
 			
 			$graph->img->SetAntiAliasing();
@@ -179,7 +179,7 @@ class GraphController extends Controller {
 			$graph->Add($p1);
 			$p1->SetCenter();
 			$p1->SetColor("#6495ED");
-			$p1->SetLegend('Profit');
+			$p1->SetLegend('Income');
 			$p1->value->SetMargin(14);
 			$graph->legend->SetFrameWeight(1);
 			$p1->mark->SetType(MARK_FILLEDCIRCLE,'',1.0);
