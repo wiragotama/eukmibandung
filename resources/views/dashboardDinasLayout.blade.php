@@ -44,7 +44,7 @@
 				e-UKMI Bandung
 			      <ul class="menu nav navbar-nav navbar-right">
 			        <li id="dashboardLink"><a href="./dashboardDinas">Dashboard</a></li>
-			        <li id="CRUDLink"> <a href="./CRUD_Dinas">CRUD</a></li>
+			        <li id="CRUDLink"> <a href="./CRUD_Dinas">Pengelolaan Data</a></li>
 			        <li id="ReportLink"> <a href="./dashboardReport">Report</a></li>
 			        <li id"LogoutLink"> <a href="./logout">Logout</a></li>
 			      </ul>
