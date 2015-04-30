@@ -79,7 +79,7 @@ class LoginController extends Controller {
 					return redirect('dashboardUKMIN');
 				}
 				else
-					return redirect('/login');
+					return redirect('login');
 			}
 			else {
 				$results = DB::select('select * from ppl_ukmin_ukm where username="'.$inputUsername.'" and password="'.$inputPassword.'"');
@@ -99,16 +99,16 @@ class LoginController extends Controller {
 						return redirect('dashboardUKMIN');
 					}
 					else
-						return redirect('/login');
+						return redirect('login');
 				}
 			}
-			return redirect('/login');
+			return redirect('login');
 		}
 	}
 
 	public function logout() 
 	{
 		Session::flush();
-		return redirect('/login');
+		return redirect('login');
 	}
 }
