@@ -108,7 +108,7 @@ class GraphController extends Controller {
 			$p1->mark->SetType(MARK_FILLEDCIRCLE,'',1.0);
 			
 			$nama = $nomor_registrasi."-".$tahun.".jpg";
-			$path = public_path()."\images\graph\\".$nama;
+			$path = public_path()."/images/graph/".$nama;
 			if(file_exists($path)){
 				unlink($path);
 			}
@@ -185,7 +185,7 @@ class GraphController extends Controller {
 			$p1->mark->SetType(MARK_FILLEDCIRCLE,'',1.0);
 			
 			$nama = $user."-".$tahun.".jpg";
-			$path = public_path()."\images\graph\\".$nama;
+			$path = public_path()."/images/graph/".$nama;
 			if(file_exists($path)){
 				unlink($path);
 			}
