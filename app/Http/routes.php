@@ -11,11 +11,12 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@check');
+Route::get('/home', 'HomeController@index');
 
 Route::get('login', 'LoginController@index');
 
-Route::post('login', array('uses' => 'LoginController@validateLogin'));
+Route::post('login', 'LoginController@validateLogin');
 Route::get('logout', 'LoginController@logout');
 
 Route::get('verifikasiUKMIndag', 'VerifikasiUKMIndagController@index');
