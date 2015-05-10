@@ -49,12 +49,12 @@ class LoginController extends Controller {
         $r = $request->all();
         if (Auth::attempt(['nik' => $r['nik'], 'password' => $r['password']])) {
 //            $results = DB::select('select role from ppl_dukcapil_ktp where nik="'.$r['nik']);
-            $results = DB::table('ppl_dukcapil_ktp')->where('nik', '=', $r['nik'])->get();
+            $results = DB::table('ppl_dukcapil_ktp')->where('nik', '=', $r['nik'])->pluck('role');
             if ($results!=NULL)
             {
                 foreach ($results as $result)
                 {
-                    echo $result;
+                    echo $result->role;
                 }
 //                return redirect('dashboardDinas');
             }
