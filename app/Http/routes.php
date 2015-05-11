@@ -50,9 +50,9 @@ Route::get('updateVerifikasi', 'UpdateController@updateVerifikasiForm');
 Route::post('updateUKM', 'UpdateController@updateUKM');
 Route::post('updateIndustri', 'UpdateController@updateIndustri');
 Route::post('updateVerifikasi', 'UpdateController@updateVerifikasi');
-Route::get('listUKM', 'updateController@listUKM');
-Route::get('listIndustri', 'updateController@listIndustri');
-Route::get('listVerifikasi', 'updateController@listVerifikasi');
+Route::get('listUKM', 'UpdateController@listUKM');
+Route::get('listIndustri', 'UpdateController@listIndustri');
+Route::get('listVerifikasi', 'UpdateController@listVerifikasi');
 
 Route::get('updateUKMUKMIN', 'UpdateProfileController@index');
 Route::get('updateIndustriUKMIN', 'UpdateProfileController@index');
