@@ -63,6 +63,7 @@ class GraphController extends Controller {
 		$nomor_registrasi = Input::get('no_registrasi');
 		//Session::get('nomor_registrasi');
 		$profit = array(0,0,0,0,0,0,0,0,0,0,0,0);
+		
 		$data = DB::table('ppl_ukmin_profit')->orderBy('bulan','asc')->select('profit','bulan')->where('no_registrasi',$nomor_registrasi)->get();
 		//print_r($data);
 		$data = json_decode(json_encode($data),true);
@@ -77,6 +78,38 @@ class GraphController extends Controller {
 			if($profit[$i] == 0){
 				$profit[$i] = NULL;
 			}
+		}
+		switch (strlen(min($profit))){
+			case 2 : 
+				for($i=0;$i<12;$i++){
+					$profit[$i] = $profit[$i]/10;
+				}
+				$satuan = "puluhan";
+				break;
+			case 3:
+				for($i=0;$i<12;$i++){
+					$profit[$i] = $profit[$i]/100;
+				}
+				$satuan = "ratusan";
+				break;
+			case 4:
+				for($i=0;$i<12;$i++){
+					$profit[$i] = $profit[$i]/1000;
+				}
+				$satuan = "ribuan";
+				break;
+			case 5:
+				for($i=0;$i<12;$i++){
+					$profit[$i] = $profit[$i]/10000;
+				}
+				$satuan = "puluhan ribu";
+				break;
+			case 6:
+				for($i=0;$i<12;$i++){
+					$profit[$i] = $profit[$i]/100000;
+				}
+				$satuan = "ratusan ribu";
+				break;
 		}
 		if($jumlah_data >0){
 			/* Pembuatan Grafik */
@@ -102,7 +135,7 @@ class GraphController extends Controller {
 			$graph->Add($p1);
 			$p1->SetCenter();
 			$p1->SetColor("#6495ED");
-			$p1->SetLegend('Income');
+			$p1->SetLegend("Income dalam satuan ".$satuan);
 			$p1->value->SetMargin(14);
 			$graph->legend->SetFrameWeight(1);
 			$p1->mark->SetType(MARK_FILLEDCIRCLE,'',1.0);
@@ -151,7 +184,38 @@ class GraphController extends Controller {
 				 $profit[$i] = NULL;
 			 }
 		 }
-		
+		switch (strlen(min($profit))){
+			case 2 : 
+				for($i=0;$i<12;$i++){
+					$profit[$i] = $profit[$i]/10;
+				}
+				$satuan = "puluhan";
+				break;
+			case 3:
+				for($i=0;$i<12;$i++){
+					$profit[$i] = $profit[$i]/100;
+				}
+				$satuan = "ratusan";
+				break;
+			case 4:
+				for($i=0;$i<12;$i++){
+					$profit[$i] = $profit[$i]/1000;
+				}
+				$satuan = "ribuan";
+				break;
+			case 5:
+				for($i=0;$i<12;$i++){
+					$profit[$i] = $profit[$i]/10000;
+				}
+				$satuan = "puluhan ribu";
+				break;
+			case 6:
+				for($i=0;$i<12;$i++){
+					$profit[$i] = $profit[$i]/100000;
+				}
+				$satuan = "ratusan ribu";
+				break;
+		}
 		if($jumlah_data >0){
 			/* Pembuatan Grafik */
 			$graph = new \Graph(850,400);
@@ -179,7 +243,7 @@ class GraphController extends Controller {
 			$graph->Add($p1);
 			$p1->SetCenter();
 			$p1->SetColor("#6495ED");
-			$p1->SetLegend('Income');
+			$p1->SetLegend("Income dalam satuan ".$satuan);
 			$p1->value->SetMargin(14);
 			$graph->legend->SetFrameWeight(1);
 			$p1->mark->SetType(MARK_FILLEDCIRCLE,'',1.0);
