@@ -49,7 +49,9 @@ class LoginController extends Controller {
         $r = $request->all();
         if (Auth::attempt(['nik' => $r['nik'], 'password' => $r['password']])) {
 //            $results = DB::select('select role from ppl_dukcapil_ktp where nik="'.$r['nik']);
-            $results = DB::table('ppl_dukcapil_ktp')->where('nik', '=', $r['nik'])->pluck('role');
+//            $results = DB::table('ppl_dukcapil_ktp')->where('nik', '=', $r['nik'])->pluck('role');
+            echo $r['nik'], $r['password'];
+            $results = DB::select('select role from ppl_dukcapil_ktp where nik="'.$r['nik'].'"');
             if ($results!=NULL)
             {
                 foreach ($results as $result)
