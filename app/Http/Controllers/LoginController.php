@@ -62,53 +62,53 @@ class LoginController extends Controller {
                     Session::put('role', 'dinas');
                     return redirect('dashboardDinas');
                 }
-                else if($role === 'ukmin_industri')
-                {
-                    //Pasti udah ada datanya di ppl_ukmin_industri, jadi tinggal put session no_registrasi
-                    $results = DB::select('select * from ppl_ukmin_industri where username="'.$r['nik'].'"');
-
-                    foreach ($results as $row) {
-                        $no_registrasi = $row->no_registrasi;
-                    }
-
-                    $results = DB::select('select * from ppl_ukmin_verifikasi where no_registrasi="'.$no_registrasi.'" and status="verified"');
-                    if ($results!=NULL)
-                    {
-                        Session::put('username', $r['nik']);
-                        Session::put('id', $row->id_industri);
-    					Session::put('role','industri');
-    					Session::put('no_registrasi',$no_registrasi);
-                        return redirect('dashboardUKMIN');
-                    }
-                    else
-                    {
-                        return redirect('login');
-                    }
-                }
-                else if($role === 'ukmin_ukm')
-                {
-                    //Pasti udah ada datanya di ppl_ukmin_industri, jadi tinggal put session no_registrasi
-                    $results = DB::select('select * from ppl_ukmin_ukm where username="'.$r['nik'].'"');
-
-                    foreach ($results as $row) {
-                        $no_registrasi = $row->no_registrasi;
-                    }
-
-                    $results = DB::select('select * from ppl_ukmin_verifikasi where no_registrasi="'.$no_registrasi.'" and status="verified"');
-
-                    if ($results!=NULL)
-					{
-                        Session::put('username', $r['nik']);
-						Session::put('id', $row->id_ukm);
-						Session::put('role','ukm');
-						Session::put('no_registrasi',$no_registrasi);
-						return redirect('dashboardUKMIN');
-					}
-					else
-                    {
-                        return redirect('login');
-                    }
-                }
+//                else if($role === 'ukmin_industri')
+//                {
+//                    //Pasti udah ada datanya di ppl_ukmin_industri, jadi tinggal put session no_registrasi
+//                    $results = DB::select('select * from ppl_ukmin_industri where username="'.$r['nik'].'"');
+//
+//                    foreach ($results as $row) {
+//                        $no_registrasi = $row->no_registrasi;
+//                    }
+//
+//                    $results = DB::select('select * from ppl_ukmin_verifikasi where no_registrasi="'.$no_registrasi.'" and status="verified"');
+//                    if ($results!=NULL)
+//                    {
+//                        Session::put('username', $r['nik']);
+//                        Session::put('id', $row->id_industri);
+//    					Session::put('role','industri');
+//    					Session::put('no_registrasi',$no_registrasi);
+//                        return redirect('dashboardUKMIN');
+//                    }
+//                    else
+//                    {
+//                        return redirect('login');
+//                    }
+//                }
+//                else if($role === 'ukmin_ukm')
+//                {
+//                    //Pasti udah ada datanya di ppl_ukmin_industri, jadi tinggal put session no_registrasi
+//                    $results = DB::select('select * from ppl_ukmin_ukm where username="'.$r['nik'].'"');
+//
+//                    foreach ($results as $row) {
+//                        $no_registrasi = $row->no_registrasi;
+//                    }
+//
+//                    $results = DB::select('select * from ppl_ukmin_verifikasi where no_registrasi="'.$no_registrasi.'" and status="verified"');
+//
+//                    if ($results!=NULL)
+//					{
+//                        Session::put('username', $r['nik']);
+//						Session::put('id', $row->id_ukm);
+//						Session::put('role','ukm');
+//						Session::put('no_registrasi',$no_registrasi);
+//						return redirect('dashboardUKMIN');
+//					}
+//					else
+//                    {
+//                        return redirect('login');
+//                    }
+//                }
             }
         }
         else

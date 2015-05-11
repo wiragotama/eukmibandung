@@ -46,7 +46,21 @@
 			        <li id="dashboardLink"><a href="./dashboardDinas">Dashboard</a></li>
 			        <li id="CRUDLink"> <a href="./CRUD_Dinas">Pengelolaan Data</a></li>
 			        <li id="ReportLink"> <a href="./dashboardReport">Report</a></li>
-			        <li id="LogoutLink"> <a href="./logout">Logout</a></li>
+                      <li id="logoutLink"> <a href="{{url('logout')}}")>Logout</a></li>
+                      <script type="text/javascript">
+                          $('#logoutLink').click(function(e) {
+                              $.ajax({
+                                  type: 'get',
+                                  url: 'http://e-gov-bandung.tk/dukcapil/api/public/auth/logout',
+                                  success: function(data) {
+
+                                  },
+                                  error: function(data) {
+                                      // alert(data);
+                                  }
+                              });
+                          })
+                      </script>
 			      </ul>
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->
