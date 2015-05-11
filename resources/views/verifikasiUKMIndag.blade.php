@@ -12,11 +12,10 @@
 		   <p style="font-size:12px"> *no registrasi didapat dari sistem perujinan terpadu</p>
 		</div>
 		
-		<form id="formVerifikasiUKMIndag" onclick="" action="/verifikasiUKMIndag" class="form-inline" method="POST">
+		<form id="formVerifikasiUKMIndag" onclick="" action="verifikasiUKMIndag" class="form-inline" method="POST">
 			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 		    <input name="no_registrasi" type="text" class="form-control" placeholder="no registasi">
 			<input type="submit" class="btn btn-success"> </input>
-			</div>
 		</form>
 	</div>
 @stop
