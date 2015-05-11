@@ -35,8 +35,13 @@ class LoginController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index(Request $req)
+	public function index()
 	{
+		return view('loginPage');
+	}
+
+    public function dispatch(Request $req)
+    {
         if (Auth::check()) {
             Auth::loginUsingId(Auth::user()->id);
             $results = DB::select('select role from ppl_dukcapil_ktp where nik="'.$r['nik'].'"');
@@ -165,9 +170,8 @@ class LoginController extends Controller {
                 }
             }
         }
-		return view('loginPage');
-	}
-	
+    }
+
 	/**
 	* Login has several role : dinas, UKM, industri
 	* @redirect
