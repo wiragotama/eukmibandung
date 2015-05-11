@@ -44,7 +44,14 @@ class LoginController extends Controller {
     {
         if (Auth::check()) {
             Auth::loginUsingId(Auth::user()->id);
-            $results = DB::select('select role from ppl_dukcapil_ktp where nik="'.$r['nik'].'"');
+
+            $results = DB::select('select nik from ppl_dukcapil_ktp where id="'.Auth::user()->id.'"');
+            foreach ($results as $result)
+            {
+                $nik = $result->role;
+            }
+
+            $results = DB::select('select role from ppl_dukcapil_ktp where nik="'.$nik.'"');
             if ($results!=NULL)
             {
                 foreach ($results as $result)
@@ -53,14 +60,14 @@ class LoginController extends Controller {
                 }
                 if($role === 'ukmin_admin')
                 {
-                    Session::put('username', $r['nik']);
+                    Session::put('username', $nik);
                     Session::put('role', 'dinas');
                     return redirect('dashboardDinas');
                 }
                 else if($role === 'ukmin_industri')
                 {
                     //Pasti udah ada datanya di ppl_ukmin_industri, jadi tinggal put session no_registrasi
-                    $results = DB::select('select * from ppl_ukmin_industri where username="'.$r['nik'].'"');
+                    $results = DB::select('select * from ppl_ukmin_industri where username="'.$nik.'"');
 
                     foreach ($results as $row) {
                         $no_registrasi = $row->no_registrasi;
@@ -69,7 +76,7 @@ class LoginController extends Controller {
                     $results = DB::select('select * from ppl_ukmin_verifikasi where no_registrasi="'.$no_registrasi.'" and status="verified"');
                     if ($results!=NULL)
                     {
-                        Session::put('username', $r['nik']);
+                        Session::put('username', $nik);
                         Session::put('id', $row->id_industri);
                         Session::put('role','industri');
                         Session::put('no_registrasi',$no_registrasi);
@@ -83,7 +90,7 @@ class LoginController extends Controller {
                 else if($role === 'ukmin_ukm')
                 {
                     //Pasti udah ada datanya di ppl_ukmin_industri, jadi tinggal put session no_registrasi
-                    $results = DB::select('select * from ppl_ukmin_ukm where username="'.$r['nik'].'"');
+                    $results = DB::select('select * from ppl_ukmin_ukm where username="'.$nik.'"');
 
                     foreach ($results as $row) {
                         $no_registrasi = $row->no_registrasi;
@@ -93,7 +100,7 @@ class LoginController extends Controller {
 
                     if ($results!=NULL)
                     {
-                        Session::put('username', $r['nik']);
+                        Session::put('username', $nik);
                         Session::put('id', $row->id_ukm);
                         Session::put('role','ukm');
                         Session::put('no_registrasi',$no_registrasi);
@@ -108,7 +115,14 @@ class LoginController extends Controller {
         }
         if ($req->id != null) {
             Auth::loginUsingId($req->id);
-            $results = DB::select('select role from ppl_dukcapil_ktp where nik="'.$r['nik'].'"');
+
+            $results = DB::select('select nik from ppl_dukcapil_ktp where id="'.Auth::user()->id.'"');
+            foreach ($results as $result)
+            {
+                $nik = $result->role;
+            }
+
+            $results = DB::select('select role from ppl_dukcapil_ktp where nik="'.$nik.'"');
             if ($results!=NULL)
             {
                 foreach ($results as $result)
@@ -117,14 +131,14 @@ class LoginController extends Controller {
                 }
                 if($role === 'ukmin_admin')
                 {
-                    Session::put('username', $r['nik']);
+                    Session::put('username', $nik);
                     Session::put('role', 'dinas');
                     return redirect('dashboardDinas');
                 }
                 else if($role === 'ukmin_industri')
                 {
                     //Pasti udah ada datanya di ppl_ukmin_industri, jadi tinggal put session no_registrasi
-                    $results = DB::select('select * from ppl_ukmin_industri where username="'.$r['nik'].'"');
+                    $results = DB::select('select * from ppl_ukmin_industri where username="'.$nik.'"');
 
                     foreach ($results as $row) {
                         $no_registrasi = $row->no_registrasi;
@@ -133,7 +147,7 @@ class LoginController extends Controller {
                     $results = DB::select('select * from ppl_ukmin_verifikasi where no_registrasi="'.$no_registrasi.'" and status="verified"');
                     if ($results!=NULL)
                     {
-                        Session::put('username', $r['nik']);
+                        Session::put('username', $nik);
                         Session::put('id', $row->id_industri);
                         Session::put('role','industri');
                         Session::put('no_registrasi',$no_registrasi);
@@ -147,7 +161,7 @@ class LoginController extends Controller {
                 else if($role === 'ukmin_ukm')
                 {
                     //Pasti udah ada datanya di ppl_ukmin_industri, jadi tinggal put session no_registrasi
-                    $results = DB::select('select * from ppl_ukmin_ukm where username="'.$r['nik'].'"');
+                    $results = DB::select('select * from ppl_ukmin_ukm where username="'.$nik.'"');
 
                     foreach ($results as $row) {
                         $no_registrasi = $row->no_registrasi;
@@ -157,7 +171,7 @@ class LoginController extends Controller {
 
                     if ($results!=NULL)
                     {
-                        Session::put('username', $r['nik']);
+                        Session::put('username', $nik);
                         Session::put('id', $row->id_ukm);
                         Session::put('role','ukm');
                         Session::put('no_registrasi',$no_registrasi);
