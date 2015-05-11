@@ -15,8 +15,8 @@
 			    <!-- Collect the nav links, forms, and other content for toggling -->
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      <ul class="menu nav navbar-nav navbar-right">
-			        <li class="active"> <a href="./createIndustri">Industri</a></li>
-			        <li ><a href="./createUKM">UKM</a></li>
+			        <li class="active"> <a href="createIndustri">Industri</a></li>
+			        <li ><a href="createUKM">UKM</a></li>
 			      </ul>
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->
@@ -25,7 +25,7 @@
 			<div class="col-md-8">
 			  <div class="contact-form">
 			  	<h2>Membuat Industri</h2>
-				    <form id="loginForm" onsubmit="#" action="/createIndustri" method="POST">
+				    <form id="loginForm" onsubmit="#" action="createIndustri" method="POST">
 				    	<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				    	<div>
 					     	<span>Nomor Registrasi</span>

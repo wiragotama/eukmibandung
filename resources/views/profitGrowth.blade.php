@@ -10,7 +10,7 @@
 		  <div class="contact-form">
 			<h3>Pilih Tahun</h3>
 				<?php
-					echo Form::open(array('url' => '/create_graph'));
+					echo Form::open(array('url' => 'create_graph'));
 						echo Form::selectRange('tahun', 2014, 2016);
 						echo Form::hidden('no_registrasi',Session::get('no_registrasi'));
 						echo Form::submit('Generate Grafik');
@@ -22,7 +22,7 @@
 				<hr/>
 				<h3> Input Income Bulanan </h3>
 				<?php
-					echo Form::open(array('url' => '/profitGrowth'));
+					echo Form::open(array('url' => 'profitGrowth'));
 						echo Form::label(date("Y-m-d"));
 						echo Form::text('profit', '100000',array('style' => 'width: 100px;margin-left:5px;'));
 						echo Form::submit('Input Income');
@@ -39,7 +39,7 @@
 			<?php
 				if(Session::get('nama')){
 			?>
-					<img src="{{ asset('images/graph/'.Session::pull('nama'))}}">
+					<img src="{{ asset('../public/images/graph/'.Session::pull('nama'))}}">
 			<?php
 				}
 			?>		

@@ -43,9 +43,9 @@
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				e-UKMI Bandung
 			      <ul class="menu nav navbar-nav navbar-right">
-			        <li id="dashboardLink"><a href="./dashboardDinas">Dashboard</a></li>
-			        <li id="CRUDLink"> <a href="./CRUD_Dinas">Pengelolaan Data</a></li>
-			        <li id="ReportLink"> <a href="./dashboardReport">Report</a></li>
+			        <li id="dashboardLink"><a href="dashboardDinas">Dashboard</a></li>
+			        <li id="CRUDLink"> <a href="CRUD_Dinas">Pengelolaan Data</a></li>
+			        <li id="ReportLink"> <a href="dashboardReport">Report</a></li>
                       <li id="logoutLink"> <a href="{{url('logout')}}")>Logout</a></li>
                       <script type="text/javascript">
                           $('#logoutLink').click(function(e) {

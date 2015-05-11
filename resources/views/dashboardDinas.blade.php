@@ -16,7 +16,7 @@
 				$results = DB::select('select * from ppl_ukmin_verifikasi where status="not verified"');
 				foreach ($results as $row)
 				{
-					echo ('<p><a href="/updateVerifikasi?id='.$row->id_verifikasi.'"><h5>'.$row->no_registrasi.'</h5></a></p>');
+					echo ('<p><a href="updateVerifikasi?id='.$row->id_verifikasi.'"><h5>'.$row->no_registrasi.'</h5></a></p>');
 				}
 			?>
 			</div>

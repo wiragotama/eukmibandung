@@ -15,7 +15,7 @@
 		  <div class="contact-form">
 		  	<h2>Update UKM</h2>
 			    <?php
-			    	echo('<form id="loginForm" onsubmit="#" action="/updateUKM?id='.$_GET['id'].'" method="POST">');
+			    	echo('<form id="loginForm" onsubmit="#" action="updateUKM?id='.$_GET['id'].'" method="POST">');
 			    ?>
 			    	<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			    		<?php

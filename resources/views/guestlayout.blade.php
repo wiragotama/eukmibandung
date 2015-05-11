@@ -46,9 +46,9 @@
 					e-UKMI BANDUNG
 			      <ul class="menu nav navbar-nav navbar-right">
 			        <li id="homepageLink"> <a href="./">Home</a></li>
-			        <li id="verifikasiUKMIndagLink"> <a href="./verifikasiUKMIndag">Verifikasi</a></li>
-			        <li id="daftarUKMIndustriLink"> <a href="./daftarUKMIndag">Daftar UKM/Industri</a></li>
-			        <li id="loginLink"> <a href="./login">Login</a></li>
+			        <li id="verifikasiUKMIndagLink"> <a href="verifikasiUKMIndag">Verifikasi</a></li>
+			        <li id="daftarUKMIndustriLink"> <a href="daftarUKMIndag">Daftar UKM/Industri</a></li>
+			        <li id="loginLink"> <a href="login">Login</a></li>
 			      </ul>
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->

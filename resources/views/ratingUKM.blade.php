@@ -35,7 +35,7 @@
 								   	?>
 										<h4><b>Beri Rating</b></h4>
 										<?php
-											echo'<form id="loginForm" onsubmit="#" action="/ratingUKM?id='.$_GET["id"].'" method="POST">';
+											echo'<form id="loginForm" onsubmit="#" action="ratingUKM?id='.$_GET["id"].'" method="POST">';
 										?>
 											<input type="hidden" name="_token" value="{{ csrf_token() }}">
 											<select name="rating" class="form-control">

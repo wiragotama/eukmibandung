@@ -12,9 +12,9 @@
 			    <?php
 				//echo Session::get('role');
 			    	if (Session::get('role')=='industri')
-			    		echo('<form id="" onsubmit="#" action="/updateIndustriUKMIN?id='.Session::get('id').'" method="POST">');
+			    		echo('<form id="" onsubmit="#" action="updateIndustriUKMIN?id='.Session::get('id').'" method="POST">');
 			    	else if (Session::get('role')=='ukm')
-			    		echo('<form id="" onsubmit="#" action="/updateUKMUKMIN?id='.Session::get('id').'" method="POST">');
+			    		echo('<form id="" onsubmit="#" action="updateUKMUKMIN?id='.Session::get('id').'" method="POST">');
 
 			    ?>
 			    	<input type="hidden" name="_token" value="{{ csrf_token() }}">

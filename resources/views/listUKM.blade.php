@@ -32,7 +32,7 @@
 							    echo ('<td>'.$row->id_ukm.'</td>');
 							    echo ('<td>'.$row->pemilik.'</td>');
 							    echo ('<td>'.$row->nama_perusahaan.'</td>');
-							    echo ('<td class="row text-center"> <a href="/updateUKM?id='.$row->id_ukm.'"> <img src="/images/update_icon.png" alt="U Mark" style="width:20px;height:20px"> </span> </td>');
+							    echo ('<td class="row text-center"> <a href="updateUKM?id='.$row->id_ukm.'"> <img src="../public/images/update_icon.png" alt="U Mark" style="width:20px;height:20px"> </span> </td>');
 							    echo('</tr>');
 							}
 			        	?>

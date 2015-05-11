@@ -11,7 +11,7 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="menu nav navbar-nav navbar-right">
 						<li>
-							<form id="searchForm" onsubmit="#" action="http://localhost:8000/search" method="POST">
+							<form id="searchForm" onsubmit="#" action="search" method="POST">
 								<input type="hidden" name="_token" value="{{ csrf_token() }}">
 									<input id="keyword" name="keyword" type="text" class="text" placeholder="KEYWORD" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'KEYWORD';}"> </input>
 						</li>
@@ -47,7 +47,7 @@
 							    echo ('<td>'.$row->nama_perusahaan.'</td>');
 							    echo ('<td>'.substr($row->deskripsi, 0, 25).'...'.'</td>');
 							    echo ('<td>'.$row->kontak.'</td>');
-							    echo ('<td class="row text-center"> <a href="/daftarUKM?id='.$row->id_ukm.'"> <img src="/images/list.png" alt="U Mark" style="width:20px;height:20px"> </span> </td>');
+							    echo ('<td class="row text-center"> <a href="daftarUKM?id='.$row->id_ukm.'"> <img src="../public/images/list.png" alt="U Mark" style="width:20px;height:20px"> </span> </td>');
 							    echo('</tr>');
 							}
 			        	?>
@@ -77,7 +77,7 @@
 							    echo ('<td>'.$row->nama_perusahaan.'</td>');
 							    echo ('<td>'.substr($row->deskripsi, 0, 25).'...'.'</td>');
 							    echo ('<td>'.$row->kontak.'</td>');
-							    echo ('<td class="row text-center"> <a href="/daftarIndustri?id='.$row->id_industri.'"> <img src="/images/list.png" alt="U Mark" style="width:20px;height:20px"> </span> </td>');
+							    echo ('<td class="row text-center"> <a href="daftarIndustri?id='.$row->id_industri.'"> <img src="../public/images/list.png" alt="U Mark" style="width:20px;height:20px"> </span> </td>');
 							    echo('</tr>');
 							}
 			        	?>

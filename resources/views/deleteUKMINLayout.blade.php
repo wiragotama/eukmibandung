@@ -10,8 +10,8 @@
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			e-UKMI BANDUNG
 		      <ul class="menu nav navbar-nav navbar-right">
-		        <li id="deleteIndustriLink"> <a href="./deleteIndustri">Industri</a></li>
-		        <li id="deleteUKMLink"><a href="./deleteUKM">UKM</a></li>
+		        <li id="deleteIndustriLink"> <a href="deleteIndustri">Industri</a></li>
+		        <li id="deleteUKMLink"><a href="deleteUKM">UKM</a></li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
