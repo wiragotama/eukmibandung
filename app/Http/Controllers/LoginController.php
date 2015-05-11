@@ -48,7 +48,7 @@ class LoginController extends Controller {
             $results = DB::select('select nik from ppl_dukcapil_ktp where id="'.Auth::user()->id.'"');
             foreach ($results as $result)
             {
-                $nik = $result->role;
+                $nik = $result->nik;
             }
 
             $results = DB::select('select role from ppl_dukcapil_ktp where nik="'.$nik.'"');
@@ -119,7 +119,7 @@ class LoginController extends Controller {
             $results = DB::select('select nik from ppl_dukcapil_ktp where id="'.Auth::user()->id.'"');
             foreach ($results as $result)
             {
-                $nik = $result->role;
+                $nik = $result->nik;
             }
 
             $results = DB::select('select role from ppl_dukcapil_ktp where nik="'.$nik.'"');
