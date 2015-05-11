@@ -9,10 +9,10 @@
 		    success: function(data) {
 		    	console.log(data)
 		    	if (data != 'false') { //redirect ke home page kalian, tp kalian juga harus login sendiri juga
-		    		var url = "{{url()}}/home?id="+data;
+		    		var url = "{{url()}}/login?id="+data;
 		    		window.location.href = url;
 		    	} else { //redirect ke alamat login kalian
-		    		var url = "{{url()}}/home" 
+		    		var url = "{{url()}}/login"
 		    		window.location.href = url
 		    	}
 		    },

@@ -42,11 +42,7 @@ class HomeController extends Controller {
 		return view('homepage');
 	}
 
-    public function check() {
-        return view('check');
-    }
-
-	public function message()
+    public function message()
 	{
 		return view('dashboardGuestMessages');
 	}
