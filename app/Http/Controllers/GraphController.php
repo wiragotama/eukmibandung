@@ -185,6 +185,7 @@ class GraphController extends Controller {
 				 $profit[$i] = NULL;
 			 }
 		 }
+		 $satuan = "ratusan ribu";
 		switch (strlen(min($profit))){
 			case 2 : 
 				for($i=0;$i<12;$i++){
