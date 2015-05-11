@@ -14,6 +14,8 @@
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
 
+Route::get('toLogin','LoginController@index');
+Route::get('toDashboard','LoginController@dispatch');
 Route::get('login', 'LoginController@check');
 
 Route::post('login', 'LoginController@validateLogin');
