@@ -83,14 +83,14 @@ class CreateController extends Controller {
 			//fail message
 			$message = 'All forms must be filled! except password';
 			$back = 'createUKM';
-			$redirect = '/dashboardMessages?message='.$message.'&'.'back='.$back;
+			$redirect = 'dashboardMessages?message='.$message.'&'.'back='.$back;
 			return redirect($redirect);
 		}
 		else 
 		{
 			$message = 'Record Create Failed!';
 			$back = 'createUKM';
-			$insertFail = '/dashboardMessages?message='.$message.'&'.'back='.$back;
+			$insertFail = 'dashboardMessages?message='.$message.'&'.'back='.$back;
 
 			if ($password!="")
 			{
@@ -118,7 +118,7 @@ class CreateController extends Controller {
 			}
 
 			$message = 'Success';
-			$redirect = '/dashboardMessages?message='.$message.'&'.'back='.$back;
+			$redirect = 'dashboardMessages?message='.$message.'&'.'back='.$back;
 			return redirect($redirect);
 		}
 	} 
@@ -162,14 +162,14 @@ class CreateController extends Controller {
 			//fail message
 			$message = 'All forms must be filled! except password';
 			$back = 'createIndustri';
-			$redirect = '/dashboardMessages?message='.$message.'&'.'back='.$back;
+			$redirect = 'dashboardMessages?message='.$message.'&'.'back='.$back;
 			return redirect($redirect);
 		}
 		else 
 		{
 			$message = 'Record Create Failed!';
 			$back = 'createIndustri';
-			$insertFail = '/dashboardMessages?message='.$message.'&'.'back='.$back;
+			$insertFail = 'dashboardMessages?message='.$message.'&'.'back='.$back;
 
 			if ($password!="")
 			{
@@ -197,7 +197,7 @@ class CreateController extends Controller {
 			}
 
 			$message = 'Success';
-			$redirect = '/dashboardMessages?message='.$message.'&'.'back='.$back;
+			$redirect = 'dashboardMessages?message='.$message.'&'.'back='.$back;
 			return redirect($redirect);
 		}
 	} 

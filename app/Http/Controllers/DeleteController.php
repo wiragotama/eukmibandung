@@ -48,7 +48,7 @@ class DeleteController extends Controller {
 	{
 		$message = 'Record Delete Failed!';
 		$back = 'deleteIndustri';
-		$deleteFail = '/dashboardMessages?message='.$message.'&'.'back='.$back;
+		$deleteFail = 'dashboardMessages?message='.$message.'&'.'back='.$back;
 	
 		try {
 			//$query = 'update ukm set username="'.$username.'" where id_ukm='.$_GET['id'];
@@ -62,7 +62,7 @@ class DeleteController extends Controller {
 			
 		$message = 'Success';
 		$back='deleteIndustri';
-		$redirect = '/dashboardMessages?message='.$message.'&'.'back='.$back;
+		$redirect = 'dashboardMessages?message='.$message.'&'.'back='.$back;
 		return redirect($redirect);
 	}
 
@@ -70,7 +70,7 @@ class DeleteController extends Controller {
 	{
 		$message = 'Record Delete Failed!';
 		$back = 'deleteUKM';
-		$deleteFail = '/dashboardMessages?message='.$message.'&'.'back='.$back;
+		$deleteFail = 'dashboardMessages?message='.$message.'&'.'back='.$back;
 	
 		try {
 			//$query = 'update ukm set username="'.$username.'" where id_ukm='.$_GET['id'];
@@ -84,7 +84,7 @@ class DeleteController extends Controller {
 			
 		$message = 'Success';
 		$back='deleteUKM';
-		$redirect = '/dashboardMessages?message='.$message.'&'.'back='.$back;
+		$redirect = 'dashboardMessages?message='.$message.'&'.'back='.$back;
 		return redirect($redirect);
 	} 
 }

@@ -42,8 +42,8 @@ class VerifikasiUKMIndagController extends Controller {
 	{
 		$no_registrasi = Input::get('no_registrasi');
 		$message = "Verifikasi Failed";
-		$back = "/verifikasiUKMIndag";
-		$insertFail = '/dashboardGuestMessages?message='.$message.'&'.'back='.$back;
+		$back = "verifikasiUKMIndag";
+		$insertFail = 'dashboardGuestMessages?message='.$message.'&'.'back='.$back;
 
 		$results = DB::select('select * from ppl_ukmin_perijinan where no_registrasi="'.$no_registrasi.'"');
 		if ($results!=NULL) 
@@ -74,14 +74,14 @@ class VerifikasiUKMIndagController extends Controller {
 				{
 
 					$message = "Verifikasi Success<br> </br> Verifikasi Anda sudah masuk, silahkan coba login atau tunggu perubahan status dari admin";
-					$back = "/verifikasiUKMIndag";
-					$verifikasiSuccess = '/dashboardGuestMessages?message='.$message.'&'.'back='.$back;
+					$back = "verifikasiUKMIndag";
+					$verifikasiSuccess = 'dashboardGuestMessages?message='.$message.'&'.'back='.$back;
 					return redirect($verifikasiSuccess);
 				}
 
 				$message = "Verifikasi Success<br> </br> Silahkan menunggu perubahan status dari admin untuk dapat login";
-				$back = "/verifikasiUKMIndag";
-				$verifikasiSuccess = '/dashboardGuestMessages?message='.$message.'&'.'back='.$back;
+				$back = "verifikasiUKMIndag";
+				$verifikasiSuccess = 'dashboardGuestMessages?message='.$message.'&'.'back='.$back;
 				return redirect($verifikasiSuccess);
 			}
 			else 
@@ -109,8 +109,8 @@ class VerifikasiUKMIndagController extends Controller {
 				else {
 					$message = "Verifikasi Success<br> </br> Masa ijin usaha Anda sudah habis";
 				}
-				$back = "/verifikasiUKMIndag";
-				$verifikasiSuccess = '/dashboardGuestMessages?message='.$message.'&'.'back='.$back;
+				$back = "verifikasiUKMIndag";
+				$verifikasiSuccess = 'dashboardGuestMessages?message='.$message.'&'.'back='.$back;
 				return redirect($verifikasiSuccess);
 			}
 			else

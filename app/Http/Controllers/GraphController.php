@@ -52,7 +52,7 @@ class GraphController extends Controller {
 			$notifikasi = "Input income gagal";
 		}
 		Session::put('notifikasi',$notifikasi);
-		return redirect('/profitGrowth');
+		return redirect('profitGrowth');
 	}
 	public function create_graph(){
 

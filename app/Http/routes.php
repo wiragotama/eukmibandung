@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index');
-Route::get('/home', 'HomeController@index');
+Route::get('home', 'HomeController@index');
 
 Route::get('toLogin','LoginController@index');
 Route::get('toDashboard','LoginController@pilah');

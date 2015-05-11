@@ -65,7 +65,7 @@ class DaftarUKMIndagController extends Controller {
 		$query = "update ppl_ukmin_ukm set rating='".$rating."' , jumlah_pemberi_rating=jumlah_pemberi_rating+1 where id_ukm=".$_GET['id'];
 		$results = DB::update($query);
 
-		return redirect('./daftarUKMIndag');
+		return redirect('daftarUKMIndag');
 	}
 
 	public function beriRatingIndustri()
@@ -85,6 +85,6 @@ class DaftarUKMIndagController extends Controller {
 		$query = "update ppl_ukmin_industri set rating='".$rating."' , jumlah_pemberi_rating=jumlah_pemberi_rating+1 where id_industri=".$_GET['id'];
 		$results = DB::update($query);
 
-		return redirect('./daftarUKMIndag');
+		return redirect('daftarUKMIndag');
 	}
 }

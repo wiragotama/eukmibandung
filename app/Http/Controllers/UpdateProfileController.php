@@ -77,14 +77,14 @@ class UpdateProfileController extends Controller {
 			//fail message
 			$message = 'All forms must be filled! except password';
 			$back = 'dashboardUKMIN';
-			$redirect = '/dashboardUKMINMessages?message='.$message.'&'.'back='.$back;
+			$redirect = 'dashboardUKMINMessages?message='.$message.'&'.'back='.$back;
 			return redirect($redirect);
 		}
 		else 
 		{
 			$message = 'Record Update Failed!';
 			$back = '='.$_GET['id'];
-			$updateFail = '/dashboardUKMINMessages?message='.$message.'&'.'back='.$back;
+			$updateFail = 'dashboardUKMINMessages?message='.$message.'&'.'back='.$back;
 
 			if ($password!="")
 			{
@@ -114,7 +114,7 @@ class UpdateProfileController extends Controller {
 
 			$message = 'Success';
 			$back='dashboardUKMIN';
-			$redirect = '/dashboardUKMINMessages?message='.$message.'&'.'back='.$back;
+			$redirect = 'dashboardUKMINMessages?message='.$message.'&'.'back='.$back;
 			return redirect($redirect);
 		}
 	} 
@@ -158,14 +158,14 @@ class UpdateProfileController extends Controller {
 			//fail message
 			$message = 'All forms must be filled! except password';
 			$back = 'dashboardUKMIN';
-			$redirect = '/dashboardUKMINMessages?message='.$message.'&'.'back='.$back;
+			$redirect = 'dashboardUKMINMessages?message='.$message.'&'.'back='.$back;
 			return redirect($redirect);
 		}
 		else 
 		{
 			$message = 'Record Update Failed!';
 			$back = 'dashboardUKMIN';
-			$updateFail = '/dashboardUKMINMessages?message='.$message.'&'.'back='.$back;
+			$updateFail = 'dashboardUKMINMessages?message='.$message.'&'.'back='.$back;
 
 			if ($password!="")
 			{
@@ -194,7 +194,7 @@ class UpdateProfileController extends Controller {
 
 			$message = 'Success';
 			$back='dashboardUKMIN';
-			$redirect = '/dashboardUKMINMessages?message='.$message.'&'.'back='.$back;
+			$redirect = 'dashboardUKMINMessages?message='.$message.'&'.'back='.$back;
 			return redirect($redirect);
 		}
 	}
@@ -205,7 +205,7 @@ class UpdateProfileController extends Controller {
 
 		$message = 'Record Update Failed!';
 		$back = 'updateVerifikasi?id='.$_GET['id'];
-		$updateFail = '/dashboardMessages?message='.$message.'&'.'back='.$back;
+		$updateFail = 'dashboardMessages?message='.$message.'&'.'back='.$back;
 
 		
 		try {
@@ -220,7 +220,7 @@ class UpdateProfileController extends Controller {
 
 		$message = 'Success';
 		$back='listVerifikasi';
-		$redirect = '/dashboardMessages?message='.$message.'&'.'back='.$back;
+		$redirect = 'dashboardMessages?message='.$message.'&'.'back='.$back;
 		return redirect($redirect);
 
 	}

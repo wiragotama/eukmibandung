@@ -104,14 +104,14 @@ class UpdateController extends Controller {
 			//fail message
 			$message = 'All forms must be filled! except password';
 			$back = 'updateUKM?id='.$_GET['id'];
-			$redirect = '/dashboardMessages?message='.$message.'&'.'back='.$back;
+			$redirect = 'dashboardMessages?message='.$message.'&'.'back='.$back;
 			return redirect($redirect);
 		}
 		else 
 		{
 			$message = 'Record Update Failed!';
 			$back = 'updateUKM?id='.$_GET['id'];
-			$updateFail = '/dashboardMessages?message='.$message.'&'.'back='.$back;
+			$updateFail = 'dashboardMessages?message='.$message.'&'.'back='.$back;
 
 			if ($password!="")
 			{
@@ -141,7 +141,7 @@ class UpdateController extends Controller {
 
 			$message = 'Success';
 			$back='listUKM';
-			$redirect = '/dashboardMessages?message='.$message.'&'.'back='.$back;
+			$redirect = 'dashboardMessages?message='.$message.'&'.'back='.$back;
 			return redirect($redirect);
 		}
 	} 
@@ -185,14 +185,14 @@ class UpdateController extends Controller {
 			//fail message
 			$message = 'All forms must be filled! except password';
 			$back = 'updateIndustri?id='.$_GET['id'];
-			$redirect = '/dashboardMessages?message='.$message.'&'.'back='.$back;
+			$redirect = 'dashboardMessages?message='.$message.'&'.'back='.$back;
 			return redirect($redirect);
 		}
 		else 
 		{
 			$message = 'Record Update Failed!';
 			$back = 'updateIndustri?id='.$_GET['id'];
-			$updateFail = '/dashboardMessages?message='.$message.'&'.'back='.$back;
+			$updateFail = 'dashboardMessages?message='.$message.'&'.'back='.$back;
 
 			if ($password!="")
 			{
@@ -221,7 +221,7 @@ class UpdateController extends Controller {
 
 			$message = 'Success';
 			$back='listIndustri';
-			$redirect = '/dashboardMessages?message='.$message.'&'.'back='.$back;
+			$redirect = 'dashboardMessages?message='.$message.'&'.'back='.$back;
 			return redirect($redirect);
 		}
 	}
@@ -232,7 +232,7 @@ class UpdateController extends Controller {
 
 		$message = 'Record Update Failed!';
 		$back = 'updateVerifikasi?id='.$_GET['id'];
-		$updateFail = '/dashboardMessages?message='.$message.'&'.'back='.$back;
+		$updateFail = 'dashboardMessages?message='.$message.'&'.'back='.$back;
 
 		
 		try {
@@ -247,7 +247,7 @@ class UpdateController extends Controller {
 
 		$message = 'Success';
 		$back='listVerifikasi';
-		$redirect = '/dashboardMessages?message='.$message.'&'.'back='.$back;
+		$redirect = 'dashboardMessages?message='.$message.'&'.'back='.$back;
 		return redirect($redirect);
 
 	}
