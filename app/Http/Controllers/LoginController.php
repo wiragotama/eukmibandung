@@ -40,7 +40,7 @@ class LoginController extends Controller {
 		return view('loginPage');
 	}
 
-    public function dispatch(Request $req)
+    public function pilah(Request $req)
     {
         if (Auth::check()) {
             Auth::loginUsingId(Auth::user()->id);
