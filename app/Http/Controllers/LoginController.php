@@ -111,6 +111,10 @@ class LoginController extends Controller {
                         return redirect('login');
                     }
                 }
+                else //Kalo gak punya role, gak kemana mana
+                {
+                    return redirect('home');
+                }
             }
         }
         if ($req->id != null) {
@@ -181,6 +185,10 @@ class LoginController extends Controller {
                     {
                         return redirect('login');
                     }
+                }
+                else //Kalo gak punya role, gak kemana mana
+                {
+                    return redirect('home');
                 }
             }
         }
@@ -254,6 +262,10 @@ class LoginController extends Controller {
                     {
                         return redirect('login');
                     }
+                }
+                else //Kalo gak punya role, gak kemana mana
+                {
+                    return redirect('home');
                 }
             }
         }
@@ -330,6 +342,7 @@ class LoginController extends Controller {
 	public function logout() 
 	{
         Auth::logout();
+        Session::flush();
 		return redirect('/home');
 	}
 }
